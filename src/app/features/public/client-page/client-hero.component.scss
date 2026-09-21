@@ -1,0 +1,110 @@
+/* Client landing hero: large, almost front-facing laptop with a foreground phone. */
+.client-hero {
+  padding: 22px 0 20px;
+  .hero-bg { background: linear-gradient(90deg,#031c2f 0%,#031c2ff0 30%,#031c2f80 53%,#031c2f35 100%),linear-gradient(0deg,#041e3270,transparent 55%),url('/assets/images/SupremeCourt.png') center/cover no-repeat; }
+  .hero-grid { width: min(1440px,calc(100% - 40px)); grid-template-columns: 35% minmax(0,65%); gap: 8px; align-items: center; }
+  .hero-copy { position: relative; z-index: 2; padding: 5px 0; }
+  .eyebrow { margin-bottom: 12px; font-size: 10px; letter-spacing: 1.5px; }
+  .hero-copy h1 { font: 600 clamp(38px,4.6vw,66px)/1.03 'Playfair Display',Georgia,serif; letter-spacing: -1.5px; }
+  .hero-sub { margin-top: 15px; font: 21px/1.15 Georgia,serif; color: #fff5e2; }
+  .hero-description { margin-top: 12px; font-size: 12px; line-height: 1.5; max-width: 420px; }
+  .actions { gap: 12px; margin-top: 19px; flex-wrap: nowrap; }
+  .button { font-size: 10px; padding: 12px 15px; gap: 9px; white-space: nowrap; }
+  .trust-bar { width: 100%; grid-template-columns: 1fr 1fr 1.25fr; gap: 10px; padding: 0; margin: 27px 0 0; border: 0; }
+  .trust { gap: 7px; align-items: center; }
+  .trust-ico { width: 26px; height: 30px; border: 0; border-radius: 0; font-size: 20px; }
+  .trust strong { font-size: 11px; font-weight: 600; white-space: nowrap; }
+  .trust small { font-size: 9px; display: block; line-height: 1.4; margin-top: 3px; }
+  .hero-media { display: block; min-height: 0; aspect-ratio: 1.74; padding: 0; container-type: inline-size; perspective: 1400px; }
+  .laptop { position: absolute; left: 1%; top: 1%; width: 73%; margin: 0; transform: rotateY(-5deg) rotateZ(.6deg); transform-origin: bottom center; filter: drop-shadow(0 12px 16px #001320aa); }
+  .laptop-screen { min-height: 45cqw; border: .9cqw solid #111c26; border-radius: 2cqw 2cqw .6cqw .6cqw; box-shadow: 0 0 0 .22cqw #75828c,inset 0 0 0 1px #3d4e59; }
+  .dash-top { background: #031e33; border-bottom: 0; padding: 1.2cqw; gap: 1cqw; height: 5.5cqw; }
+  .dt-brand { color: #ded5bd; gap: .7cqw; }
+  .dt-brand legal-icon { font-size: 2cqw; }
+  .dt-brand b { font: 1.1cqw Georgia,serif; letter-spacing: 0; }
+  .dt-brand small { font-size: .65cqw; color: #c5baa0; }
+  .dt-links { gap: 2cqw; margin-left: auto; }
+  .dt-links b { font-size: .65cqw; color: #a9bac6; }
+  .dt-user { position: absolute; top: 8cqw; right: 3cqw; gap: .5cqw; z-index: 1; color: #15374e; }
+  .dt-user img { width: 2.2cqw; height: 2.2cqw; }
+  .dt-user b { font-size: .75cqw; }
+  .dt-user small { font-size: .65cqw; }
+  .dt-user .bell { font-size: 1cqw; order: 3; margin-left: .6cqw; }
+  .dash-side { width: 20%; flex-shrink: 0; padding: 1.5cqw .7cqw; gap: .45cqw; }
+  .dash-side span { padding: .75cqw .5cqw; gap: .55cqw; font-size: .8cqw; border-radius: .3cqw; white-space: nowrap; }
+  .dash-side legal-icon { font-size: 1.15cqw; color: #c6d6df; }
+  .dash-side .on { background: #18527a; color: white; }
+  .dash-side .on legal-icon { color: white; }
+  .dash-main { padding: 2cqw 1.5cqw 1.5cqw; background: #f5f8fb; }
+  .dash-head strong { font: 600 1.45cqw Georgia,serif; }
+  .dash-head span { display: block; font: 600 1.9cqw Georgia,serif; color: #14324a; margin-top: .45cqw; }
+  .dash-note { font-size: .95cqw; max-width: 36cqw; margin-top: 1cqw; color: #768997; }
+  .dash-stats { gap: 1cqw; margin-top: 1.6cqw; }
+  .dash-tile { padding: 1cqw .7cqw; border: 1px solid #e5eaf0; background: white; border-radius: .6cqw; box-shadow: 0 .3cqw .6cqw #1234490a; }
+  .tile-ico { width: 2cqw; height: 2cqw; top: 1cqw; left: .7cqw; font-size: 1.2cqw; }
+  .dash-tile strong { font-size: 1.8cqw; margin-left: 2.5cqw; }
+  .dash-tile small { font-size: .75cqw; margin-left: 2.5cqw; white-space: nowrap; }
+  .dash-tile a { font-size: .7cqw; margin-left: 2.5cqw; color: #366386; }
+  .dash-bottom { grid-template-columns: 1.45fr 1fr; gap: 1cqw; margin-top: 1.5cqw; }
+  .dash-activity { padding: 1cqw; gap: .9cqw; background: white; border-color: #e5eaf0; }
+  .dash-activity>strong { font: 600 1.2cqw Georgia,serif; }
+  .dash-activity span { position: relative; display: block; padding: .5cqw 0 .5cqw 1.6cqw; font-size: .85cqw; border-bottom: 1px solid #edf1f5; }
+  .dash-activity .dot { position: absolute; left: 0; top: .7cqw; width: .8cqw; height: .8cqw; }
+  .dash-activity em { display: block; font-size: .65cqw; text-align: left; margin-top: .5cqw; }
+  .dash-help { background: white; color: #17384f; border: 1px solid #e5eaf0; border-radius: .6cqw; padding: 1.2cqw; }
+  .dash-help strong { font: 600 1.15cqw Georgia,serif; }
+  .dash-help p { font-size: .85cqw; color: #6a8292; margin: 1cqw 0 1.5cqw; }
+  .dash-help a { background: #072d49; color: white; padding: 1cqw 1.5cqw; font-size: .85cqw; }
+  .laptop-keyboard { position: relative; height: 4.7cqw; margin: 0 -5%; padding: .4cqw 5% 1.6cqw; clip-path: polygon(5% 0,95% 0,100% 100%,0 100%); background: linear-gradient(165deg,#d4d8da,#80909c 55%,#cbd1d4); }
+  .laptop-keyboard>span { display: block; height: 100%; background: repeating-linear-gradient(0deg,transparent 0 .55cqw,#71818a .55cqw .7cqw),repeating-linear-gradient(90deg,#18232a 0 1.65cqw,#71818a 1.65cqw 1.8cqw); border-radius: .5cqw; }
+  .laptop-keyboard::after { content: ''; position: absolute; width: 18%; height: 1.1cqw; left: 41%; bottom: .2cqw; border: 1px solid #667783; border-radius: .3cqw; background: #a6b1b9; }
+  .laptop-base { height: 1cqw; margin: 0 -5%; border-radius: 0 0 55% 55%; background: linear-gradient(#e2e6e8,#7d8b96); }
+  .laptop-base::before { display: none; }
+  .phone { display: block; width: 24%; right: 12%; bottom: 3%; border: .8cqw solid #13212b; border-radius: 3cqw; padding: .25cqw; background: #06273e; transform: rotate(7deg); box-shadow: 0 0 0 .2cqw #a0a4a5; filter: drop-shadow(1cqw 1.5cqw 1.5cqw #00111cb0); }
+  .phone-notch { width: 32%; height: .8cqw; background: #0b1720; }
+  .phone-screen { border-radius: 2cqw; overflow: hidden; padding: 0 .7cqw .9cqw; }
+  .phone-top { padding: 2cqw .7cqw 1.8cqw; }
+  .phone-logo { gap: .6cqw; }
+  .phone-logo legal-icon { font-size: 2.2cqw; }
+  .phone-logo b { font: 1.1cqw Georgia,serif; letter-spacing: 0; }
+  .phone-logo small { font-size: .7cqw; }
+  .phone-top>strong { font: italic 2.15cqw/1.2 Georgia,serif; margin-top: 2.2cqw; }
+  .phone-screen ul { background: white; border-radius: .7cqw; padding: .8cqw .7cqw; }
+  .phone-screen li { padding: 1.6cqw .3cqw; gap: .7cqw; font-size: .9cqw; white-space: nowrap; }
+  .phone-screen li i { width: 1.9cqw; height: 1.9cqw; font-size: 1.3cqw; }
+  .hero-quote { display: block; top: 12%; right: 0; width: 13%; font: italic 1.85cqw/1.35 Georgia,serif; text-align: center; }
+  .hero-quote::after { content: ''; display: block; width: 32%; height: 2px; background: #d7b878; margin: 1.8cqw auto 0; }
+}
+@media(max-width:1100px) and (min-width:801px) {
+  .client-hero .hero-copy h1 { font-size: 4.5vw; }
+  .client-hero .hero-sub { font-size: 17px; }
+  .client-hero .hero-description { font-size: 10px; }
+  .client-hero .button { font-size: 8px; padding: 10px; }
+  .client-hero .trust strong { font-size: 9.5px; }
+  .client-hero .trust small { font-size: 8px; }
+  .client-hero .trust-ico { font-size: 16px; width: 21px; }
+}
+@media(max-width:800px) {
+  .client-hero { padding: 30px 0 20px; }
+  .client-hero .hero-grid { grid-template-columns: minmax(0,1fr); gap: 30px; width: calc(100% - 36px); }
+  .client-hero .hero-copy { max-width: 540px; }
+  .client-hero .hero-copy h1 { font-size: clamp(40px,8vw,60px); }
+  .client-hero .hero-sub { font-size: 21px; }
+  .client-hero .hero-description { font-size: 13px; }
+  .client-hero .hero-media { width: 100%; max-width: 700px; margin: auto; }
+  .client-hero .hero-bg { background-position: 70% center; }
+  .client-hero .trust-bar { grid-template-columns: repeat(3,minmax(0,1fr)); gap: 10px; }
+  .client-hero .trust strong { font-size: 10px; white-space: normal; }
+}
+@media(max-width:400px) {
+  .client-hero .hero-copy h1 { font-size: 39px; }
+  .client-hero .button { font-size: 9px; padding: 11px 10px; }
+  .client-hero .actions { gap: 8px; }
+  .client-hero .trust { gap: 4px; }
+  .client-hero .trust-ico { font-size: 16px; width: 22px; }
+  .client-hero .trust small { font-size: 8px; }
+}
+@media(max-width:800px) {
+  .client-hero .hero-bg { background: linear-gradient(90deg,#031c2fe8,#031c2fa3),url('/assets/images/SupremeCourt.png') 70% center/cover no-repeat; }
+  .client-hero .hero-sub { font-size: 19px; }
+}

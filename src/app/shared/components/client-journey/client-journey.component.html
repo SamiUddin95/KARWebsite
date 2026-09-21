@@ -1,0 +1,67 @@
+<div class="client-panels">
+  <a class="portrait-panel" routerLink="/lawyers" aria-label="Find a lawyer for your legal consultation">
+    <img src="assets/images/legalhelp.jpg" alt="A woman consulting a lawyer by video call on her tablet" loading="lazy" width="1024" height="1536">
+    <div class="portrait-shade"></div>
+    <div class="portrait-copy">
+      <h3>Seeking<br>Legal Help?</h3>
+      <p class="reassurance">You’re not alone.</p>
+      <p class="portrait-description">Trusted advice.<br>Real legal solutions.<br>Connect with lawyers<br>across Pakistan.</p>
+    </div>
+    <div class="portrait-caption">Informed citizens.<br>A stronger Pakistan.<span>Find your lawyer <legal-icon name="arrow"/></span></div>
+  </a>
+
+  <div class="journey-panel">
+    <div class="journey-heading"><h3>CLIENT JOURNEY</h3><p>From your first question to your case file — digitally connected.</p></div>
+    <div class="journey-scroll" tabindex="0" role="region" aria-label="Explore nine steps in your legal journey">
+      <div class="journey-phones">
+        @for(step of steps; track step.title) {
+          <a class="journey-step" [routerLink]="step.route" [attr.aria-label]="step.title">
+            <div class="step-label"><span class="step-symbol"><legal-icon [name]="step.icon"/></span><h4>{{step.title}}</h4></div>
+            <div class="mini-phone" aria-hidden="true">
+              <span class="speaker"></span>
+              <div class="mini-brand">⚖ DIGITAL LAW FIRM</div>
+              <div class="mini-screen" [class.call-screen]="step.type === 'call'">
+                @if(step.type === 'call') {
+                  <img src="assets/images/man.png" alt="" loading="lazy" width="1024" height="1536">
+                  <span class="call-status">Your consultation</span>
+                  <div class="call-controls"><i></i><i></i><i></i></div>
+                } @else {
+                  <strong class="screen-title">{{step.screen}}</strong>
+                  @if(step.type === 'confirmed') {
+                    <span class="confirmation"><legal-icon name="check"/></span><b class="confirmed-label">{{step.done}}</b><span class="tiny-line"></span><span class="tiny-line short"></span>
+                  } @else if(step.type === 'calendar') {
+                    <div class="cal-grid">@for(c of calCells; track c; let i = $index){<i [class.sel]="i === 19">{{i > 8 ? i - 8 : ''}}</i>}</div>
+                    <div class="cal-times"><i></i><i></i><i></i></div>
+                  } @else if(step.type === 'timeline') {
+                    @for(row of tlRows; track row; let i = $index) {
+                      <div class="screen-row timeline"><span class="tl-dot" [class.done]="i < 2"></span><div><span class="tiny-line"></span><span class="tiny-line short"></span></div></div>
+                    }
+                  } @else {
+                    @for(row of rows; track row) {
+                      <div class="screen-row"><span class="row-icon" [class.person]="step.type === 'people'" [class.radio]="step.type === 'payment'"><legal-icon [name]="step.type === 'people' ? 'user' : step.icon"/></span><div><span class="tiny-line"></span><span class="tiny-line short"></span></div></div>
+                    }
+                  }
+                  <div class="screen-button">Continue</div>
+                }
+              </div>
+              <span class="phone-navigation">◁ &nbsp; ○ &nbsp; □</span>
+            </div>
+          </a>
+        }
+      </div>
+    </div>
+    <p class="journey-caption">“Legal services designed around you.”</p>
+    <p class="preview-note">Illustrative screens · Explore a step to get started</p>
+  </div>
+
+  <div class="reach-panel">
+    <img class="waterfront" src="assets/images/Reaches.jpg" alt="An illuminated waterfront promenade and city skyline at dusk" loading="lazy" width="1024" height="1536">
+    <div class="reach-shade"></div>
+    <div class="reach-content">
+      <h3>Always within reach.</h3>
+      <p class="reach-subtitle">Consult. Document. Track. Resolve.</p>
+      <div class="reach-features">@for(feature of features; track feature.title){<a [routerLink]="feature.route"><span><legal-icon [name]="feature.icon"/></span><div><h4>{{feature.title}}</h4><p>{{feature.text}}</p></div></a>}</div>
+      <a routerLink="/lawyers" class="consultation-button">Book a consultation <legal-icon name="arrow"/></a>
+    </div>
+  </div>
+</div>

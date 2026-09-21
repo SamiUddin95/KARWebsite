@@ -1,0 +1,8 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.angular/cache/20.3.35/kar-web
+/.vs
+/dist/kar-web
+/node_modules

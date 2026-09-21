@@ -1,0 +1,100 @@
+@use 'variables' as *;
+
+.auth-card {
+  background: $color-black-card;
+  border: 1px solid $color-black-border;
+  border-radius: $radius-xl;
+  padding: $space-8;
+  width: 100%;
+
+  @media (max-width: $breakpoint-sm) { padding: $space-6; }
+}
+
+.auth-card-header {
+  text-align: center;
+  margin-bottom: $space-6;
+}
+
+.auth-card-title {
+  font-family: $font-serif;
+  font-size: $font-size-3xl;
+  font-weight: 600;
+  color: $color-text-primary;
+  margin-bottom: $space-2;
+}
+
+.auth-card-subtitle {
+  font-size: $font-size-sm;
+  color: $color-text-secondary;
+}
+
+.auth-error {
+  display: flex;
+  align-items: center;
+  gap: $space-2;
+  padding: $space-3 $space-4;
+  background: rgba(244, 67, 54, 0.08);
+  border: 1px solid rgba(244, 67, 54, 0.2);
+  border-radius: $radius-md;
+  color: $color-error;
+  font-size: $font-size-sm;
+  margin-bottom: $space-5;
+}
+
+.form-label-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: $space-2;
+}
+
+.forgot-link {
+  font-size: $font-size-xs;
+  color: $color-gold;
+  text-decoration: none;
+  transition: color 0.2s;
+  &:hover { color: $color-gold-light; }
+}
+
+.pass-input {
+  position: relative;
+
+  .form-control { padding-right: 48px; }
+
+  .pass-toggle {
+    position: absolute;
+    right: $space-3;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: $color-text-muted;
+    padding: $space-1;
+    display: flex;
+    align-items: center;
+    transition: color 0.2s;
+
+    &:hover { color: $color-gold; }
+  }
+}
+
+.auth-divider {
+  display: flex;
+  align-items: center;
+  gap: $space-3;
+  margin: $space-5 0;
+
+  &::before, &::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: $color-black-border;
+  }
+
+  span {
+    font-size: $font-size-xs;
+    color: $color-text-muted;
+    white-space: nowrap;
+  }
+}

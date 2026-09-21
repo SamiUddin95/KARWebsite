@@ -1,0 +1,299 @@
+<!-- ═══════════════════════════════════════════════════════ PAGE HERO -->
+<section class="lawyers-hero">
+  <div class="container">
+    <div class="lawyers-hero-inner">
+      <div class="lawyers-hero-text">
+        <span class="section-label">Our Network</span>
+        <h1 class="lawyers-hero-title">Find the Right Lawyer</h1>
+        <p class="lawyers-hero-sub">
+          Browse {{ totalCount() | number }} verified legal professionals across Pakistan —
+          filtered by practice area, rating, and availability.
+        </p>
+      </div>
+
+      <div class="lawyers-search-bar">
+        <svg class="search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+        <input [formControl]="search" type="text" class="search-input"
+               placeholder="Search by name, expertise, city…" />
+        @if (search.value) {
+          <button class="search-clear" (click)="search.setValue('')">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+          </button>
+        }
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════ MAIN BODY -->
+<div class="lawyers-body">
+  <div class="container">
+    <div class="lawyers-layout">
+
+      <!-- ── FILTER SIDEBAR ──────────────────────────────────────── -->
+      <aside class="filter-sidebar" [class.open]="filtersOpen()">
+
+        <div class="filter-sidebar-header">
+          <span class="filter-sidebar-title">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg>
+            Filters
+          </span>
+          @if (hasFilters()) {
+            <button class="clear-all-btn" (click)="clearFilters()">Clear All</button>
+          }
+        </div>
+
+        <!-- Practice Area -->
+        <div class="filter-group">
+          <div class="filter-group-label">Practice Area</div>
+          <div class="filter-chips">
+            @for (area of practiceAreas; track area) {
+              <button class="filter-chip"
+                      [class.active]="practiceArea() === area"
+                      (click)="setPracticeArea(area)">
+                {{ area }}
+              </button>
+            }
+          </div>
+        </div>
+
+        <!-- Minimum Rating -->
+        <div class="filter-group">
+          <div class="filter-group-label">Minimum Rating</div>
+          <div class="filter-list">
+            @for (opt of ratingOptions; track opt.value) {
+              <button class="filter-list-item"
+                      [class.active]="minRating() === opt.value"
+                      (click)="setRating(opt.value)">
+                <div class="filter-stars">
+                  @for (s of getStars(opt.value); track $index) {
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  }
+                </div>
+                {{ opt.label }}
+              </button>
+            }
+          </div>
+        </div>
+
+      </aside>
+
+      <!-- ── RESULTS ──────────────────────────────────────────────── -->
+      <div class="lawyers-results">
+
+        <!-- Toolbar -->
+        <div class="results-toolbar">
+          <div class="results-count">
+            @if (!loading()) {
+              <span>
+                <strong>{{ totalCount() | number }}</strong> lawyers found
+                @if (hasFilters()) { <span class="filtered-tag">filtered</span> }
+              </span>
+            }
+          </div>
+
+          <div class="results-controls">
+            <!-- Sort -->
+            <div class="sort-group">
+              @for (s of sortOptions; track s.value) {
+                <button class="sort-btn"
+                        [class.active]="sortBy() === s.value"
+                        (click)="setSort(s.value)">
+                  {{ s.label }}
+                </button>
+              }
+            </div>
+
+            <!-- Mobile filter toggle -->
+            <button class="mobile-filter-btn" (click)="toggleFilters()">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg>
+              Filters
+              @if (hasFilters()) { <span class="filter-badge">●</span> }
+            </button>
+          </div>
+        </div>
+
+        <!-- Active filter tags -->
+        @if (hasFilters()) {
+          <div class="active-filters">
+            @if (search.value) {
+              <div class="filter-tag">
+                "{{ search.value }}"
+                <button (click)="search.setValue('')">×</button>
+              </div>
+            }
+            @if (practiceArea()) {
+              <div class="filter-tag">
+                {{ practiceArea() }}
+                <button (click)="setPracticeArea(practiceArea())">×</button>
+              </div>
+            }
+            @if (minRating() !== null) {
+              <div class="filter-tag">
+                {{ minRating() }}+ Stars
+                <button (click)="setRating(null)">×</button>
+              </div>
+            }
+          </div>
+        }
+
+        <!-- Error -->
+        @if (error()) {
+          <div class="state-card error-state">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            <h3>Something went wrong</h3>
+            <p>{{ error() }}</p>
+            <button class="btn btn-secondary" (click)="load()">Try Again</button>
+          </div>
+        }
+
+        <!-- Loading skeleton -->
+        @else if (loading()) {
+          <div class="lawyers-grid">
+            @for (s of skeletons; track $index) {
+              <div class="lawyer-card skeleton-card">
+                <div class="skeleton lawyer-card-photo-area"></div>
+                <div class="lawyer-card-body">
+                  <div class="skeleton skeleton-line w-3/4"></div>
+                  <div class="skeleton skeleton-line w-1/2" style="margin-top:0.5rem"></div>
+                  <div class="skeleton skeleton-line w-full" style="margin-top:1rem;height:40px"></div>
+                </div>
+                <div class="lawyer-card-footer skeleton-footer">
+                  <div class="skeleton skeleton-btn"></div>
+                  <div class="skeleton skeleton-btn"></div>
+                </div>
+              </div>
+            }
+          </div>
+        }
+
+        <!-- Empty state -->
+        @else if (!sortedLawyers.length) {
+          <div class="state-card empty-state">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+            <h3>No lawyers found</h3>
+            <p>Try adjusting your search or filters.</p>
+            <button class="btn btn-secondary" (click)="clearFilters()">Clear Filters</button>
+          </div>
+        }
+
+        <!-- Lawyer cards -->
+        @else {
+          <div class="lawyers-grid">
+            @for (lawyer of sortedLawyers; track lawyer.id) {
+              <article class="lawyer-card" [routerLink]="['/lawyers', lawyer.id]">
+
+                <!-- Photo / Avatar -->
+                <div class="lawyer-card-photo-area">
+                  @if (lawyer.profilePhoto) {
+                    <img [src]="lawyer.profilePhoto" [alt]="getLawyerName(lawyer)" class="lawyer-photo" />
+                  } @else {
+                    <div class="lawyer-avatar">
+                      <span>{{ getInitials(lawyer) }}</span>
+                    </div>
+                  }
+                  @if (lawyer.isActive) {
+                    <span class="online-badge" title="Available"></span>
+                  }
+                </div>
+
+                <!-- Body -->
+                <div class="lawyer-card-body">
+                  <h3 class="lawyer-name">{{ getLawyerName(lawyer) }}</h3>
+
+                  @if (lawyer.expertise) {
+                    <div class="lawyer-expertise">{{ lawyer.expertise }}</div>
+                  }
+
+                  <!-- Rating -->
+                  @if (lawyer.rating) {
+                    <div class="lawyer-rating">
+                      <div class="stars">
+                        @for (s of getStars(lawyer.rating); track $index) {
+                          <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        }
+                      </div>
+                      <span class="rating-val">{{ lawyer.rating | number:'1.1-1' }}</span>
+                      @if (lawyer.reviews) {
+                        <span class="rating-count">({{ lawyer.reviews }})</span>
+                      }
+                    </div>
+                  }
+
+                  <!-- Bio snippet -->
+                  @if (lawyer.biography) {
+                    <p class="lawyer-bio">{{ lawyer.biography }}</p>
+                  }
+
+                  <!-- Stats row -->
+                  <div class="lawyer-stats">
+                    @if (lawyer.experience) {
+                      <div class="stat">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                        {{ lawyer.experience }}
+                      </div>
+                    }
+                    @if (lawyer.total_Cases) {
+                      <div class="stat">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 7H4a2 2 0 00-2 2v10a2 2 0 002 2h16a2 2 0 002-2V9a2 2 0 00-2-2z"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg>
+                        {{ lawyer.total_Cases | number }} cases
+                      </div>
+                    }
+                    @if (lawyer.win_Rate) {
+                      <div class="stat stat-win">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                        {{ formatWinRate(lawyer.win_Rate) }} win rate
+                      </div>
+                    }
+                  </div>
+                </div>
+
+                <!-- Footer CTA -->
+                <div class="lawyer-card-footer">
+                  <a [routerLink]="['/lawyers', lawyer.id]" class="btn btn-ghost btn-sm"
+                     (click)="$event.stopPropagation()">View Profile</a>
+                  <a routerLink="/auth/register" class="btn btn-primary btn-sm"
+                     (click)="$event.stopPropagation()">Book Now</a>
+                </div>
+
+              </article>
+            }
+          </div>
+
+          <!-- Pagination -->
+          @if (totalPages() > 1) {
+            <nav class="pagination" aria-label="Pagination">
+              <button class="pagination-btn"
+                      [disabled]="currentPage() === 1"
+                      (click)="goToPage(currentPage() - 1)">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+              </button>
+
+              @for (p of pageNumbers(); track p) {
+                @if (p === '...') {
+                  <span class="pagination-ellipsis">…</span>
+                } @else {
+                  <button class="pagination-btn pagination-num"
+                          [class.active]="currentPage() === p"
+                          (click)="goToPage(p)">{{ p }}</button>
+                }
+              }
+
+              <button class="pagination-btn"
+                      [disabled]="currentPage() === totalPages()"
+                      (click)="goToPage(currentPage() + 1)">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+              </button>
+            </nav>
+
+            <p class="pagination-info">
+              Page {{ currentPage() }} of {{ totalPages() }}
+              &nbsp;·&nbsp; {{ totalCount() | number }} total lawyers
+            </p>
+          }
+        }
+
+      </div><!-- /lawyers-results -->
+    </div><!-- /lawyers-layout -->
+  </div><!-- /container -->
+</div><!-- /lawyers-body -->

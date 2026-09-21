@@ -1,0 +1,270 @@
+@use 'variables' as *;
+
+// ============================================================
+// KAR Layout Utilities
+// ============================================================
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+// ============================================================
+// Container
+// ============================================================
+
+.container {
+  width: 100%;
+  max-width: $container-max;
+  margin: 0 auto;
+  padding: 0 $space-6;
+
+  @media (max-width: $breakpoint-md) {
+    padding: 0 $space-4;
+  }
+}
+
+.container-narrow {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 $space-6;
+}
+
+// ============================================================
+// Section spacing
+// ============================================================
+
+.section {
+  padding: $space-24 0;
+
+  @media (max-width: $breakpoint-md) {
+    padding: $space-16 0;
+  }
+}
+
+.section-sm {
+  padding: $space-16 0;
+
+  @media (max-width: $breakpoint-md) {
+    padding: $space-12 0;
+  }
+}
+
+.section-header {
+  margin-bottom: $space-12;
+
+  &.center {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.section-header-row {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: $space-12;
+  gap: $space-6;
+
+  @media (max-width: $breakpoint-md) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+// ============================================================
+// Grid
+// ============================================================
+
+.grid {
+  display: grid;
+  gap: $space-6;
+}
+
+.grid-2 { grid-template-columns: repeat(2, 1fr); }
+.grid-3 { grid-template-columns: repeat(3, 1fr); }
+.grid-4 { grid-template-columns: repeat(4, 1fr); }
+.grid-5 { grid-template-columns: repeat(5, 1fr); }
+.grid-6 { grid-template-columns: repeat(6, 1fr); }
+
+@media (max-width: $breakpoint-lg) {
+  .grid-4 { grid-template-columns: repeat(2, 1fr); }
+  .grid-5 { grid-template-columns: repeat(2, 1fr); }
+  .grid-6 { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: $breakpoint-md) {
+  .grid-2 { grid-template-columns: 1fr; }
+  .grid-3 { grid-template-columns: 1fr; }
+  .grid-4 { grid-template-columns: 1fr; }
+  .grid-5 { grid-template-columns: 1fr; }
+  .grid-6 { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: $breakpoint-sm) {
+  .grid-6 { grid-template-columns: 1fr; }
+}
+
+// ============================================================
+// Flex helpers
+// ============================================================
+
+.flex { display: flex; }
+.flex-col { display: flex; flex-direction: column; }
+.flex-wrap { flex-wrap: wrap; }
+.items-center { align-items: center; }
+.items-start { align-items: flex-start; }
+.items-end { align-items: flex-end; }
+.justify-center { justify-content: center; }
+.justify-between { justify-content: space-between; }
+.justify-end { justify-content: flex-end; }
+.flex-1 { flex: 1; }
+.flex-shrink-0 { flex-shrink: 0; }
+
+// ============================================================
+// Spacing helpers
+// ============================================================
+
+.gap-1 { gap: $space-1; }
+.gap-2 { gap: $space-2; }
+.gap-3 { gap: $space-3; }
+.gap-4 { gap: $space-4; }
+.gap-5 { gap: $space-5; }
+.gap-6 { gap: $space-6; }
+.gap-8 { gap: $space-8; }
+
+.mt-1 { margin-top: $space-1; }
+.mt-2 { margin-top: $space-2; }
+.mt-3 { margin-top: $space-3; }
+.mt-4 { margin-top: $space-4; }
+.mt-6 { margin-top: $space-6; }
+.mt-8 { margin-top: $space-8; }
+.mt-12 { margin-top: $space-12; }
+
+.mb-1 { margin-bottom: $space-1; }
+.mb-2 { margin-bottom: $space-2; }
+.mb-3 { margin-bottom: $space-3; }
+.mb-4 { margin-bottom: $space-4; }
+.mb-6 { margin-bottom: $space-6; }
+.mb-8 { margin-bottom: $space-8; }
+
+// ============================================================
+// Dividers
+// ============================================================
+
+.divider {
+  height: 1px;
+  background: $color-black-border;
+  margin: $space-8 0;
+}
+
+.divider-gold {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, $color-gold-border, transparent);
+  margin: $space-8 0;
+}
+
+// ============================================================
+// Badges
+// ============================================================
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: $space-1;
+  padding: $space-1 $space-3;
+  border-radius: $radius-full;
+  font-size: $font-size-xs;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.badge-gold {
+  background: $color-gold-muted;
+  color: $color-gold;
+  border: 1px solid $color-gold-border;
+}
+
+.badge-dark {
+  background: $color-black-soft;
+  color: $color-text-secondary;
+  border: 1px solid $color-black-border;
+}
+
+.badge-success {
+  background: rgba(76, 175, 80, 0.12);
+  color: $color-success;
+  border: 1px solid rgba(76, 175, 80, 0.25);
+}
+
+.badge-error {
+  background: rgba(244, 67, 54, 0.12);
+  color: $color-error;
+  border: 1px solid rgba(244, 67, 54, 0.25);
+}
+
+.badge-warning {
+  background: rgba(255, 152, 0, 0.12);
+  color: $color-warning;
+  border: 1px solid rgba(255, 152, 0, 0.25);
+}
+
+// Verified badge
+.verified-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: $space-1;
+  color: $color-gold;
+  font-size: $font-size-xs;
+  font-weight: 600;
+
+  svg { width: 14px; height: 14px; }
+}
+
+// ============================================================
+// Utility
+// ============================================================
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  border: 0;
+}
+
+.hidden { display: none !important; }
+
+.truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.gold-dot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: $color-gold;
+}
+
+.text-gradient-gold {
+  background: linear-gradient(135deg, $color-gold-light, $color-gold, $color-gold-dark);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}

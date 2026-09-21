@@ -1,0 +1,152 @@
+@use 'variables' as *;
+
+// ============================================================
+// KAR Button System
+// ============================================================
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: $space-2;
+  padding: 0 $space-6;
+  height: 48px;
+  font-family: $font-sans;
+  font-size: $font-size-sm;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  border: none;
+  border-radius: $radius-sm;
+  cursor: pointer;
+  transition: $transition-normal;
+  white-space: nowrap;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+
+  lucide-icon, svg {
+    flex-shrink: 0;
+  }
+}
+
+// Primary — Gold
+.btn-primary {
+  background: linear-gradient(135deg, $color-gold 0%, $color-gold-dark 100%);
+  color: $color-black;
+  border: 1px solid transparent;
+
+  &:hover {
+    background: linear-gradient(135deg, $color-gold-light 0%, $color-gold 100%);
+    box-shadow: $shadow-gold;
+    transform: translateY(-1px);
+    color: $color-black;
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+// Secondary — Dark with Gold border
+.btn-secondary {
+  background: transparent;
+  color: $color-gold;
+  border: 1px solid $color-gold-border;
+
+  &:hover {
+    background: $color-gold-muted;
+    border-color: $color-gold;
+    color: $color-gold-light;
+    transform: translateY(-1px);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+// Ghost — Dark
+.btn-ghost {
+  background: transparent;
+  color: $color-text-primary;
+  border: 1px solid $color-black-border;
+
+  &:hover {
+    background: $color-black-hover;
+    border-color: #444;
+    color: $color-white;
+  }
+}
+
+// White
+.btn-white {
+  background: $color-white;
+  color: $color-text-dark;
+  border: 1px solid transparent;
+
+  &:hover {
+    background: $color-cream;
+    transform: translateY(-1px);
+    color: $color-text-dark;
+  }
+}
+
+// Sizes
+.btn-sm {
+  height: 36px;
+  padding: 0 $space-4;
+  font-size: $font-size-xs;
+}
+
+.btn-lg {
+  height: 56px;
+  padding: 0 $space-8;
+  font-size: $font-size-base;
+}
+
+.btn-xl {
+  height: 64px;
+  padding: 0 $space-10;
+  font-size: $font-size-lg;
+}
+
+.btn-full {
+  width: 100%;
+}
+
+// Icon only
+.btn-icon {
+  width: 48px;
+  padding: 0;
+
+  &.btn-sm { width: 36px; }
+  &.btn-lg { width: 56px; }
+}
+
+// Loading state
+.btn-loading {
+  color: transparent !important;
+  pointer-events: none;
+
+  &::after {
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    border: 2px solid transparent;
+    border-top-color: currentColor;
+    border-radius: 50%;
+    animation: btn-spin 0.6s linear infinite;
+  }
+}
+
+@keyframes btn-spin {
+  to { transform: rotate(360deg); }
+}

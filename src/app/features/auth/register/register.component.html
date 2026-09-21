@@ -1,0 +1,86 @@
+<div class="auth-card register-card">
+  <div class="auth-card-header">
+    <h2 class="auth-card-title">Create Account</h2>
+    <p class="auth-card-subtitle">Your legal journey starts here</p>
+  </div>
+
+  @if (error()) {
+    <div class="auth-error">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+      {{ error() }}
+    </div>
+  }
+
+  <form [formGroup]="form" (ngSubmit)="submit()" novalidate>
+
+    <!-- Role selection -->
+    <div class="role-selector">
+      @for (role of roles; track role.value) {
+        <button type="button" class="role-option"
+                [class.selected]="f['role'].value === role.value"
+                (click)="selectRole(role.value)">
+          <span class="role-label">{{ role.label }}</span>
+          <span class="role-desc">{{ role.description }}</span>
+        </button>
+      }
+    </div>
+
+    <div class="register-fields">
+      <div class="form-group">
+        <label class="form-label">Full Name <span class="required">*</span></label>
+        <input type="text" class="form-control" formControlName="fullName" placeholder="Your full name" />
+        @if (f['fullName'].invalid && f['fullName'].touched) {
+          <span class="form-error">Full name is required (min 3 chars).</span>
+        }
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Email Address <span class="required">*</span></label>
+        <input type="email" class="form-control" formControlName="email" placeholder="you@example.com" autocomplete="email" />
+        @if (f['email'].invalid && f['email'].touched) {
+          <span class="form-error">{{ f['email'].errors?.['required'] ? 'Email is required.' : 'Enter a valid email.' }}</span>
+        }
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Phone Number</label>
+        <input type="tel" class="form-control" formControlName="phone" placeholder="+92 300 0000000" />
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Password <span class="required">*</span></label>
+        <div class="pass-input">
+          <input [type]="showPass() ? 'text' : 'password'" class="form-control"
+                 formControlName="password" placeholder="Min. 8 characters" autocomplete="new-password" />
+          <button type="button" class="pass-toggle" (click)="togglePass()" tabindex="-1">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              @if (showPass()) { <path d="M17.94 17.94A10.07 10.07 0 0112 20c-7 0-11-8-11-8a18.45 18.45 0 015.06-5.94"/><path d="M9.9 4.24A9.12 9.12 0 0112 4c7 0 11 8 11 8a18.5 18.5 0 01-2.16 3.19"/><line x1="1" y1="1" x2="23" y2="23"/>}
+              @else { <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/>}
+            </svg>
+          </button>
+        </div>
+        @if (f['password'].invalid && f['password'].touched) {
+          <span class="form-error">Password must be at least 8 characters.</span>
+        }
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Confirm Password <span class="required">*</span></label>
+        <input type="password" class="form-control"
+               formControlName="confirmPassword" placeholder="Re-enter password" autocomplete="new-password" />
+        @if (form.errors?.['mismatch'] && f['confirmPassword'].touched) {
+          <span class="form-error">Passwords do not match.</span>
+        }
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary btn-full" style="margin-top:1.5rem"
+            [class.btn-loading]="loading()" [disabled]="loading()">
+      @if (!loading()) { Create Account }
+    </button>
+  </form>
+
+  <div class="auth-divider"><span>Already have an account?</span></div>
+  <a routerLink="/auth/login" class="btn btn-ghost btn-full">Sign In</a>
+</div>
+

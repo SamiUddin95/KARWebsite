@@ -1,0 +1,151 @@
+@use 'variables' as *;
+
+// ============================================================
+// KAR Form System
+// ============================================================
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: $space-2;
+}
+
+.form-label {
+  font-family: $font-sans;
+  font-size: $font-size-sm;
+  font-weight: 500;
+  color: $color-text-secondary;
+  letter-spacing: 0.02em;
+
+  .required {
+    color: $color-gold;
+    margin-left: $space-1;
+  }
+}
+
+.form-control {
+  width: 100%;
+  height: 48px;
+  padding: 0 $space-4;
+  background: $color-black-soft;
+  border: 1px solid $color-black-border;
+  border-radius: $radius-md;
+  color: $color-text-primary;
+  font-family: $font-sans;
+  font-size: $font-size-base;
+  transition: $transition-fast;
+  outline: none;
+  box-sizing: border-box;
+
+  &::placeholder {
+    color: $color-text-muted;
+  }
+
+  &:focus {
+    border-color: $color-gold;
+    background: $color-black-card;
+    box-shadow: 0 0 0 3px rgba(198, 161, 91, 0.12);
+  }
+
+  &.ng-invalid.ng-touched {
+    border-color: $color-error;
+    box-shadow: 0 0 0 3px rgba(244, 67, 54, 0.1);
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}
+
+textarea.form-control {
+  height: auto;
+  min-height: 120px;
+  padding: $space-3 $space-4;
+  resize: vertical;
+}
+
+select.form-control {
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23666' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right $space-4 center;
+  padding-right: $space-10;
+
+  option {
+    background: $color-black-card;
+    color: $color-text-primary;
+  }
+}
+
+.form-error {
+  font-size: $font-size-xs;
+  color: $color-error;
+  display: flex;
+  align-items: center;
+  gap: $space-1;
+}
+
+.form-hint {
+  font-size: $font-size-xs;
+  color: $color-text-muted;
+}
+
+// Light variant (for light backgrounds)
+.form-control-light {
+  background: rgba(255, 255, 255, 0.9);
+  border-color: rgba(0, 0, 0, 0.1);
+  color: $color-text-dark;
+
+  &::placeholder {
+    color: #999;
+  }
+
+  &:focus {
+    background: $color-white;
+    border-color: $color-gold-dark;
+    box-shadow: 0 0 0 3px rgba(160, 122, 56, 0.1);
+  }
+
+  option {
+    background: $color-white;
+    color: $color-text-dark;
+  }
+}
+
+// Search input
+.search-control {
+  position: relative;
+
+  .search-icon {
+    position: absolute;
+    left: $space-4;
+    top: 50%;
+    transform: translateY(-50%);
+    color: $color-text-muted;
+    pointer-events: none;
+  }
+
+  .form-control {
+    padding-left: 44px;
+  }
+}
+
+// Badge / Tag input
+.form-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $space-2;
+  padding: $space-3 $space-4;
+  background: $color-black-soft;
+  border: 1px solid $color-black-border;
+  border-radius: $radius-md;
+  min-height: 48px;
+  transition: $transition-fast;
+
+  &:focus-within {
+    border-color: $color-gold;
+    box-shadow: 0 0 0 3px rgba(198, 161, 91, 0.12);
+  }
+}

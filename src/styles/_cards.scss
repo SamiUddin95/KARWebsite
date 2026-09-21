@@ -1,0 +1,258 @@
+@use 'variables' as *;
+
+// ============================================================
+// KAR Card System
+// ============================================================
+
+.kar-card {
+  background: $color-black-card;
+  border: 1px solid $color-black-border;
+  border-radius: $radius-lg;
+  overflow: hidden;
+  transition: $transition-normal;
+
+  &:hover {
+    border-color: $color-gold-border;
+    box-shadow: $shadow-lg;
+    transform: translateY(-2px);
+  }
+}
+
+.kar-card-gold {
+  background: $color-black-card;
+  border: 1px solid $color-gold-border;
+  border-radius: $radius-lg;
+  overflow: hidden;
+
+  &:hover {
+    border-color: $color-gold;
+    box-shadow: $shadow-gold;
+  }
+}
+
+.kar-card-flat {
+  background: $color-black-card;
+  border: 1px solid $color-black-border;
+  border-radius: $radius-lg;
+  overflow: hidden;
+}
+
+// Stat Card
+.stat-card {
+  background: $color-black-card;
+  border: 1px solid $color-black-border;
+  border-radius: $radius-lg;
+  padding: $space-6;
+  transition: $transition-normal;
+
+  .stat-value {
+    font-family: $font-serif;
+    font-size: $font-size-4xl;
+    font-weight: 700;
+    color: $color-gold;
+    line-height: 1;
+  }
+
+  .stat-label {
+    font-size: $font-size-sm;
+    color: $color-text-secondary;
+    margin-top: $space-2;
+  }
+
+  &:hover {
+    border-color: $color-gold-border;
+    box-shadow: $shadow-gold;
+  }
+}
+
+// Lawyer Card
+.lawyer-card {
+  background: $color-black-card;
+  border: 1px solid $color-black-border;
+  border-radius: $radius-lg;
+  overflow: hidden;
+  transition: $transition-normal;
+  cursor: pointer;
+
+  .lawyer-card-photo {
+    width: 100%;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    display: block;
+    background: $color-black-soft;
+  }
+
+  .lawyer-card-photo-placeholder {
+    width: 100%;
+    aspect-ratio: 4/3;
+    background: linear-gradient(135deg, $color-black-soft 0%, $color-black-border 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $color-text-muted;
+  }
+
+  .lawyer-card-body {
+    padding: $space-5;
+  }
+
+  .lawyer-card-name {
+    font-family: $font-serif;
+    font-size: $font-size-lg;
+    font-weight: 600;
+    color: $color-text-primary;
+  }
+
+  .lawyer-card-practice {
+    font-size: $font-size-sm;
+    color: $color-gold;
+    margin-top: $space-1;
+  }
+
+  .lawyer-card-meta {
+    display: flex;
+    gap: $space-4;
+    margin-top: $space-3;
+  }
+
+  .lawyer-card-meta-item {
+    display: flex;
+    align-items: center;
+    gap: $space-1;
+    font-size: $font-size-xs;
+    color: $color-text-secondary;
+  }
+
+  .lawyer-card-footer {
+    padding: $space-4 $space-5;
+    border-top: 1px solid $color-black-border;
+    display: flex;
+    gap: $space-2;
+  }
+
+  &:hover {
+    border-color: $color-gold-border;
+    box-shadow: $shadow-gold;
+    transform: translateY(-2px);
+
+    .lawyer-card-name {
+      color: $color-gold-light;
+    }
+  }
+}
+
+// Service Card
+.service-card {
+  background: $color-black-card;
+  border: 1px solid $color-black-border;
+  border-radius: $radius-lg;
+  padding: $space-6;
+  transition: $transition-normal;
+  cursor: pointer;
+  text-align: center;
+
+  .service-card-icon {
+    width: 56px;
+    height: 56px;
+    margin: 0 auto $space-4;
+    border-radius: $radius-md;
+    background: $color-gold-muted;
+    border: 1px solid $color-gold-border;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $color-gold;
+    transition: $transition-normal;
+  }
+
+  .service-card-title {
+    font-family: $font-sans;
+    font-size: $font-size-base;
+    font-weight: 600;
+    color: $color-text-primary;
+    margin-bottom: $space-2;
+  }
+
+  .service-card-description {
+    font-size: $font-size-sm;
+    color: $color-text-secondary;
+    line-height: $line-height-relaxed;
+  }
+
+  &:hover {
+    border-color: $color-gold-border;
+    box-shadow: $shadow-gold;
+    transform: translateY(-3px);
+
+    .service-card-icon {
+      background: $color-gold;
+      border-color: $color-gold;
+      color: $color-black;
+    }
+
+    .service-card-title {
+      color: $color-gold-light;
+    }
+  }
+}
+
+// Practice Area Card
+.practice-card {
+  position: relative;
+  background: $color-black-card;
+  border: 1px solid $color-black-border;
+  border-radius: $radius-lg;
+  padding: $space-6;
+  transition: $transition-normal;
+  overflow: hidden;
+  cursor: pointer;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, $color-gold-dark, $color-gold, $color-gold-dark);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .practice-card-number {
+    font-family: $font-serif;
+    font-size: $font-size-4xl;
+    font-weight: 700;
+    color: $color-gold-border;
+    line-height: 1;
+    margin-bottom: $space-4;
+    transition: $transition-normal;
+  }
+
+  .practice-card-title {
+    font-family: $font-serif;
+    font-size: $font-size-xl;
+    font-weight: 600;
+    color: $color-text-primary;
+    margin-bottom: $space-3;
+  }
+
+  .practice-card-description {
+    font-size: $font-size-sm;
+    color: $color-text-secondary;
+    line-height: $line-height-relaxed;
+  }
+
+  &:hover {
+    border-color: $color-gold-border;
+    transform: translateY(-3px);
+
+    &::before {
+      opacity: 1;
+    }
+
+    .practice-card-number {
+      color: $color-gold;
+    }
+  }
+}

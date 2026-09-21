@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 260" fill="none" role="img" aria-label="Digital legal services dashboard on a laptop">
+  <defs>
+    <linearGradient id="screen" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0e4d75"/>
+      <stop offset="1" stop-color="#082b43"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ecd49c"/>
+      <stop offset="1" stop-color="#b98f4e"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#000" flood-opacity=".35"/>
+    </filter>
+  </defs>
+
+  <!-- laptop base -->
+  <path d="M45 244 L375 244 L375 252 C375 257 370 260 365 260 H55 C50 260 45 257 45 252 Z" fill="#0f1a22"/>
+  <ellipse cx="210" cy="244" rx="135" ry="7" fill="#111a22"/>
+
+  <!-- screen outer -->
+  <rect x="65" y="15" width="290" height="220" rx="14" fill="#061825" filter="url(#shadow)"/>
+  <rect x="71" y="21" width="278" height="208" rx="10" fill="url(#screen)"/>
+
+  <!-- top bar -->
+  <rect x="71" y="21" width="278" height="24" rx="10" fill="#0d3b5c"/>
+  <circle cx="83" cy="33" r="4" fill="#c6a15b"/>
+  <circle cx="97" cy="33" r="4" fill="#8cb4cd"/>
+  <circle cx="111" cy="33" r="4" fill="#8cb4cd"/>
+  <rect x="210" y="29" width="120" height="8" rx="4" fill="#ffffff" opacity=".1"/>
+
+  <!-- sidebar -->
+  <rect x="71" y="45" width="70" height="184" fill="#082a41"/>
+  <rect x="85" y="65" width="42" height="6" rx="3" fill="#c6a15b" opacity=".7"/>
+  <rect x="85" y="81" width="42" height="6" rx="3" fill="#fff" opacity=".25"/>
+  <rect x="85" y="97" width="42" height="6" rx="3" fill="#fff" opacity=".25"/>
+  <rect x="85" y="113" width="42" height="6" rx="3" fill="#fff" opacity=".25"/>
+
+  <!-- main list -->
+  <rect x="155" y="65" width="180" height="14" rx="7" fill="#fff" opacity=".08"/>
+  <rect x="155" y="87" width="180" height="14" rx="7" fill="#fff" opacity=".08"/>
+  <rect x="155" y="109" width="180" height="14" rx="7" fill="#fff" opacity=".08"/>
+  <rect x="155" y="131" width="180" height="14" rx="7" fill="#fff" opacity=".08"/>
+  <circle cx="169" cy="72" r="5" fill="url(#gold)"/>
+  <circle cx="169" cy="94" r="5" fill="#8cb4cd"/>
+  <circle cx="169" cy="116" r="5" fill="#8cb4cd"/>
+  <circle cx="169" cy="138" r="5" fill="#8cb4cd"/>
+
+  <!-- chart -->
+  <rect x="155" y="158" width="82" height="56" rx="6" fill="#0d3b5c" opacity=".6"/>
+  <path d="M169 198 L182 183 L196 190 L210 172 L228 177" stroke="#c6a15b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+
+  <!-- right card -->
+  <rect x="253" y="158" width="82" height="56" rx="6" fill="#0d3b5c" opacity=".6"/>
+  <rect x="267" y="174" width="54" height="6" rx="3" fill="#c6a15b" opacity=".7"/>
+  <rect x="267" y="188" width="38" height="6" rx="3" fill="#fff" opacity=".3"/>
+</svg>

@@ -1,0 +1,10 @@
+/* Hero artwork is isolated so section layouts retain their existing spacing. */
+.hero .hero-grid { grid-template-columns: .95fr 1.25fr; gap: 28px; padding-top: 40px; }
+.hero .hero-visual { padding-top: 55px; width: 100%; max-width: none; }
+.hero-national { position: absolute; right: 20px; top: 8px; width: 112px; text-align: center; pointer-events: none; }
+.hero-national img { width: 90px; height: 78px; margin: 0 auto; filter: drop-shadow(0 5px 8px #00162280); }
+.hero-national p { font: italic 13px/1.3 Georgia, serif; color: #f3e8d0; text-shadow: 0 2px 4px #001321; margin-top: 2px; }
+@media(min-width:1600px) { .hero-national { right: max(24px, calc((100vw - 1500px) / 2)); } }
+@media(max-width:1100px) { .hero .hero-grid { grid-template-columns: 1fr 1.15fr; gap: 22px; } .hero-national { width: 98px; } .hero-national p { font-size: 11px; } }
+@media(max-width:800px) { .hero .hero-grid { grid-template-columns: 1fr; padding-top: 30px; gap: 42px; } .hero .hero-visual { padding-top: 0; max-width: 660px; margin: auto; } .hero-national { top: 20px; right: 22px; } .hero-national p { font-size: 10px; } }
+@media(max-width:520px) { .hero .hero-grid { padding-top: 90px; gap: 30px; } .hero-national { width: 82px; right: 17px; top: 8px; } .hero-national img { width: 65px; height: 56px; } .hero-national p { font-size: 9px; } .hero .hero-visual { width: 100%; } }

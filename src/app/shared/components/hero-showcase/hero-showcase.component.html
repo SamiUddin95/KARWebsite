@@ -1,0 +1,48 @@
+<div class="showcase">
+  <svg class="connections" viewBox="0 0 800 570" fill="none" aria-hidden="true">
+    <defs>
+      <linearGradient id="orbit-line" x1="60" y1="250" x2="740" y2="250" gradientUnits="userSpaceOnUse"><stop stop-color="#e4bc76"/><stop offset=".3" stop-color="#8bcaff"/><stop offset=".7" stop-color="#8bcaff"/><stop offset="1" stop-color="#f196a6"/></linearGradient>
+      <filter id="orbit-glow"><feGaussianBlur stdDeviation="3"/></filter>
+    </defs>
+    <g stroke="url(#orbit-line)" stroke-width="1.6">
+      <path d="M58 247C80-24 697-24 744 247M58 247Q400 107 744 247M204 115Q400 23 628 115M400 65V196"/>
+    </g>
+    <g fill="#ffebad"><circle cx="400" cy="132" r="5"/><circle cx="129" cy="219" r="3"/><circle cx="701" cy="231" r="3"/></g>
+    <g fill="#ffebad" filter="url(#orbit-glow)"><circle cx="400" cy="132" r="9"/><circle cx="129" cy="219" r="6"/><circle cx="701" cy="231" r="6"/></g>
+  </svg>
+
+  @for(audience of audiences; track audience.name) {
+    <a [class]="'audience '+audience.color" [routerLink]="audience.route" [queryParams]="audience.role ? {role: audience.role} : {}">
+      <legal-icon [name]="audience.icon"/>
+      <strong>{{audience.name}}</strong>
+      <small>{{audience.detail}}</small>
+    </a>
+  }
+
+  <div class="laptop" role="img" aria-label="Illustrative Digital Law Firm laptop dashboard">
+    <div class="laptop-frame">
+      <div class="desktop-bar"><span><legal-icon name="scale"/> Digital Law Firm</span><span>Home &nbsp; Practice &nbsp; Portal</span><legal-icon name="search"/></div>
+      <div class="desktop-screen">
+        <aside>@for(item of menu; track item){<div [class.selected]="$first"><span>◈</span>{{item}}</div>}</aside>
+        <div class="dashboard">
+          <div class="welcome"><div><small>Welcome back,</small><h3>Your legal journey matters.</h3></div><span class="avatar">AH</span></div>
+          <div class="metrics">@for(metric of metrics; track metric.label){<div><legal-icon [name]="metric.icon"/><b>{{metric.value}}</b><small>{{metric.label}}</small></div>}</div>
+          <div class="dashboard-panels"><div><h4>Recent activity</h4>@for(item of activity; track item){<p><span class="activity-dot"></span>{{item}}<small>View →</small></p>}</div><div><h4>Quick actions</h4>@for(action of actions; track action.label){<p><legal-icon [name]="action.icon"/>{{action.label}}</p>}</div></div>
+          <div class="sample-label">ILLUSTRATIVE PORTAL PREVIEW</div>
+        </div>
+      </div>
+    </div>
+    <div class="keyboard"><div></div></div>
+    <div class="laptop-edge"></div>
+  </div>
+
+  <div class="phone" aria-label="Mobile legal services">
+    <div class="phone-speaker"></div>
+    <div class="phone-screen">
+      <div class="phone-brand"><legal-icon name="scale"/><span>Digital Law Firm<small>Justice. Simplified.</small></span></div>
+      <h3>Get Legal Help.<br><em>On the Go.</em></h3>
+      <div class="phone-actions">@for(action of actions; track action.label){<a [routerLink]="action.route"><legal-icon [name]="action.icon"/><span>{{action.label}}</span></a>}</div>
+      <div class="phone-bottom" aria-hidden="true">◁ &nbsp; ○ &nbsp; □</div>
+    </div>
+  </div>
+</div>
