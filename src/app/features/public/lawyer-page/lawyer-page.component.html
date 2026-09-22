@@ -1,0 +1,177 @@
+<section class="lawyer-hero">
+  <div class="hero-bg" aria-hidden="true"></div>
+  <p class="hero-motto">Pakistan’s Legal Talent<br>Powering Progress</p>
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <p class="eyebrow"><span></span> A MODERN PLATFORM FOR PAKISTAN'S LEGAL PROFESSIONALS</p>
+      <h1>Work. Practice. <em>Earn.</em></h1>
+      <p class="hero-sub">Turn your legal expertise into digital opportunity.</p>
+      <p class="hero-description">Join Pakistan's trusted legal ecosystem. Access paid legal tasks, consult clients, work on real cases, use AI tools, grow your practice and make a meaningful impact — all in one professional platform.</p>
+      <div class="actions">
+        <a routerLink="/auth/register" [queryParams]="{role:'Lawyer'}" class="button gold-button">Join as a Lawyer <legal-icon name="arrow"/></a>
+        <a routerLink="/for-lawyers" fragment="features" class="button outline-button">Explore Portal Features</a>
+      </div>
+      <div class="stats-bar">
+        @for(s of heroStats; track s.label){
+          <div class="stat"><legal-icon [name]="s.icon"/><div><strong>{{s.value}}</strong><small>{{s.label}}</small></div></div>
+        }
+      </div>
+    </div>
+  </div>
+  <div class="law-quote">"The law is not just a profession, it is a way to serve society."</div>
+  <div class="lap-card" role="img" aria-label="Lawyer portal preview showing tasks, cases, consultations and earnings">
+    <div class="lap-bar"><span class="lap-brand"><legal-icon name="scale"/><b>Digital Law Firm</b></span><span class="lap-btics"><legal-icon name="search"/><legal-icon name="bell"/><legal-icon name="user"/></span></div>
+    <div class="lap-main">
+      <div class="lap-side">
+        @for(m of lapMenu; track m.label){
+          <span [class.on]="m.active"><legal-icon [name]="m.icon"/>{{m.label}}</span>
+        }
+      </div>
+      <div class="lap-content">
+        <div class="lap-hello"><img src="assets/images/man.png" alt="Adv. Ahmed Khan"><div><small>Good Evening</small><b>Adv. Ahmed Khan</b><em>Continue Making a Difference</em></div></div>
+        <div class="lap-tiles">
+          <div><strong>12</strong><small>Available Tasks</small></div>
+          <div><strong>3</strong><small>Active Cases</small></div>
+          <div><strong>5</strong><small>Upcoming Consultations</small></div>
+          <div class="earn"><strong>PKR 185,000</strong><small>This Month</small></div>
+        </div>
+        <b class="lap-sec">Recent Opportunities</b>
+        <div class="lap-rows">
+          @for(t of lapTasks; track t.title){
+            <span><i class="sq"><legal-icon name="check"/></i><u>{{t.title}}<small>{{t.sub}}</small></u><em>{{t.amt}}</em></span>
+          }
+        </div>
+      </div>
+      <div class="lap-tag"><em>"Justice<br>Creates<br>Opportunity."</em></div>
+    </div>
+    <div class="lap-keyboard" aria-hidden="true"><i></i></div>
+  </div>
+</section>
+
+<section class="features section" id="features">
+  <div class="wrap">
+    <div class="features-head">
+      <h2>Portal Features</h2>
+      <p>Everything you need to practice, earn and grow — in one professional platform.</p>
+      <em>Verified Lawyers. Real Opportunities. Greater Impact.</em>
+    </div>
+    <div class="feature-grid">
+      @for(f of features; track f.title){
+        <div class="feature-card"><span class="fc-ico"><legal-icon [name]="f.icon"/></span><strong>{{f.title}}</strong><p>{{f.text}}</p><a [routerLink]="f.route">{{f.link}} →</a></div>
+      }
+    </div>
+  </div>
+</section>
+
+<section class="membership section" id="membership">
+  <div class="wrap">
+    <div class="features-head">
+      <h2>Professional Membership Categories</h2>
+      <p>Access based on qualification, experience and professional status.</p>
+      <em>Different Roles. Stronger Legal Ecosystem.</em>
+    </div>
+    <div class="member-row">
+      <div class="member-cards">
+        @for(m of memberships; track m.name){
+          <div [class]="'member-card '+m.cls">
+            <legal-icon [name]="m.icon"/>
+            <b>{{m.name}}</b>
+            <span>{{m.level}}</span>
+            @if(m.years){<strong>{{m.years}}</strong>}
+            @if(m.sub){<small>{{m.sub}}</small>}
+            <legal-icon class="water" [name]="m.icon"/>
+          </div>
+        }
+      </div>
+      <div class="member-side">
+        <em>"Greater Lawyers Communities A Better Pakistan."</em>
+        <ul>@for(c of memberChecks; track c){<li><legal-icon name="check"/>{{c}}</li>}</ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="journey section">
+  <div class="wrap">
+    <div class="features-head">
+      <h2>Your Journey as a Lawyer</h2>
+      <p>From application to a growing legal career.</p>
+      <em>Work. Practice. Earn. Make a Difference.</em>
+    </div>
+    <div class="j-steps">
+      @for(j of journey; track j.title; let i = $index){
+        <div class="j-step"><span class="j-num">{{i+1}}</span><strong>{{j.title}}</strong><p>{{j.text}}</p></div>
+      }
+    </div>
+  </div>
+</section>
+
+<section class="market section">
+  <div class="wrap market-grid">
+    <div class="task-card">
+      <div class="card-head"><div><h3>Legal Task Marketplace</h3><small>Quality tasks matched to your expertise.</small></div><a routerLink="/lawyers">View All Tasks →</a></div>
+      <table>
+        <thead><tr><th>Task Title</th><th>Area of Law</th><th>Payment</th><th>Deadline</th><th></th></tr></thead>
+        <tbody>
+          @for(t of tasks; track t.title){
+            <tr><td>{{t.title}}</td><td>{{t.area}}</td><td><b>{{t.pay}}</b></td><td>{{t.deadline}}</td><td><a class="apply-btn" routerLink="/auth/register">Apply</a></td></tr>
+          }
+        </tbody>
+      </table>
+    </div>
+    <div class="dash-card">
+      <div class="card-head"><div><h3>My Dashboard</h3><small>Your practice at a glance.</small></div><a routerLink="/client/dashboard">View Full Dashboard →</a></div>
+      <div class="dash-tiles">
+        @for(d of dashStats; track d.label){
+          <div class="d-tile"><span [class]="'t-ico '+d.cls"><legal-icon [name]="d.icon"/></span><strong>{{d.value}}</strong><small>{{d.label}}</small></div>
+        }
+      </div>
+      <div class="dash-cols">
+        <div><h4>Recent Activity <a>View All</a></h4>@for(a of activity; track a.text){<p><i class="dot"></i><span>{{a.text}}<small>{{a.meta}}</small></span></p>}</div>
+        <div><h4>Pending Payments <a>View All</a></h4>@for(p of payments; track p.amount){<p class="pay"><i class="dot gold"></i><span>{{p.amount}}<small>{{p.status}}</small></span></p>}</div>
+      </div>
+    </div>
+    <div class="ai-card">
+      <span class="ai-mark">AI</span>
+      <h3>AI Legal Workspace</h3>
+      <small>Your AI-powered legal assistant.</small>
+      <ul>@for(t of aiTools; track t.title){<li><legal-icon [name]="t.icon"/><div><b>{{t.title}}</b><span>{{t.text}}</span></div></li>}</ul>
+      <a routerLink="/auth/register" class="button gold-button">Launch AI Legal Workspace <legal-icon name="arrow"/></a>
+    </div>
+  </div>
+</section>
+
+<section class="earnings section">
+  <div class="wrap">
+    <div class="features-head"><h2>Earnings &amp; Performance</h2><p>Your success drives a stronger legal ecosystem.</p></div>
+    <div class="earn-grid">
+      <div class="earn-main">
+        <div class="earn-stats">
+          @for(e of earnStats; track e.label){
+            <div class="e-stat"><strong>{{e.value}}</strong><small>{{e.label}}</small><span class="up">↑ {{e.trend}}</span></div>
+          }
+        </div>
+        <div class="chart-card">
+          <div class="card-head"><h3>Earnings Trend (PKR)</h3><div class="tabs"><b class="on">This Month</b><b>Last 6 Months</b><b>This Year</b></div></div>
+          <div class="bars">
+            <span class="y">300K</span><span class="y">200K</span><span class="y">100K</span>
+            @for(c of chart; track c.m){<div class="bar"><i [style.height.%]="c.h"></i><small>{{c.m}}</small></div>}
+          </div>
+        </div>
+      </div>
+      <div class="bonus-card">
+        <div class="card-head"><h3>Performance Bonuses</h3></div>
+        @for(b of bonuses; track b.label){<p><i class="dot gold"></i><span>{{b.label}}</span><b>{{b.amount}}</b></p>}
+      </div>
+      <div class="impact-card">
+        <img src="assets/images/SupremeCourt.png" alt="Supreme Court of Pakistan">
+        <div class="impact-shade"></div>
+        <div class="impact-copy"><h3>Your Expertise Creates Real Impact.</h3><p>Join a community where your skills support the system and empower clients to make a difference.</p>
+          <a routerLink="/auth/register" [queryParams]="{role:'Lawyer'}" class="button gold-button">Join as a Lawyer <legal-icon name="arrow"/></a>
+          <a href="#membership" class="impact-link">Explore Professional Membership <legal-icon name="arrow"/></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+

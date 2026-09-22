@@ -1,0 +1,93 @@
+/* Hero */
+.lawyer-hero{position:relative;background:#041e32;color:#f5f2e9;overflow:hidden;padding:56px 0 0;min-height:640px}
+.hero-bg{position:absolute;inset:0;background:linear-gradient(100deg,#041e32f4 22%,#041e32d0 42%,#041e3255 66%,#041e3200 90%),url('/assets/images/Lawyer.png') center/100% 100% no-repeat}
+.hero-grid{position:relative;display:flex;align-items:center;min-height:560px}
+.hero-copy{max-width:600px;padding:20px 0 225px}
+.hero-copy h1{font-size:clamp(42px,4.6vw,64px);letter-spacing:-1.8px;line-height:1.06}
+.hero-copy h1 em{color:#e4c589}
+.hero-sub{font:italic 18px/1.5 Georgia,serif;color:#e8d9b6;margin-top:16px}
+.hero-description{font-size:12px;color:#c3cfd6;max-width:470px;margin-top:12px}
+.stats-bar{display:grid;grid-template-columns:repeat(4,auto);gap:26px;margin-top:34px;padding-top:20px;border-top:1px solid #ffffff14;justify-content:start}
+.stat{display:flex;align-items:center;gap:10px}
+.stat legal-icon{color:#e4c589;font-size:20px}
+.stat strong{display:block;font-size:15px}
+.stat small{font-size:8.5px;color:#93a8b5}
+.law-quote{position:absolute;z-index:2;right:470px;top:96px;max-width:210px;background:#0c2c47e6;border:1px solid #d5b37155;border-radius:8px;padding:13px 16px;font:italic 11px/1.55 Georgia,serif;color:#e8d9b6}
+.lap-card{position:absolute;z-index:2;right:8px;bottom:0;width:470px;background:#fff;border:7px solid #141d28;border-bottom:0;border-radius:14px 14px 0 0;color:#17334b;box-shadow:0 18px 40px #02131fb3}
+.lap-card:after{content:'';position:absolute;left:-26px;right:-26px;bottom:-7px;height:10px;background:linear-gradient(#2a3542,#141d28);border-radius:0 0 10px 10px}
+.lap-bar{display:flex;align-items:center;justify-content:space-between;background:#0c2c47;color:#f5f2e9;padding:7px 11px;font-size:8px}
+.lap-brand{display:flex;align-items:center;gap:5px;letter-spacing:.6px}
+.lap-brand legal-icon{color:#e4c589;font-size:11px}
+.lap-brand b{font-size:8.5px;text-transform:uppercase}
+.lap-btics{display:flex;gap:9px;color:#b9c7d2;font-size:9px}
+.lap-main{display:grid;grid-template-columns:92px 1fr 118px;min-height:230px}
+.lap-side{background:#0c2c47;display:flex;flex-direction:column;padding:8px 0;gap:2px}
+.lap-side span{display:flex;flex-direction:column;align-items:center;gap:3px;padding:6.5px 4px;font-size:6px;color:#9db2c4;letter-spacing:.3px}
+.lap-side span legal-icon{font-size:11px;color:#9db2c4}
+.lap-side span.on{background:#d5b371;color:#3a2d10}
+.lap-side span.on legal-icon{color:#3a2d10}
+.lap-content{padding:11px 11px 0;display:flex;flex-direction:column;gap:8px;overflow:hidden}
+.lap-hello{display:flex;align-items:center;gap:9px;background:#f5f1e6;border:1px solid #e6dfc8;border-radius:6px;padding:8px}
+.lap-hello img{width:30px;height:30px;border-radius:5px;object-fit:cover;object-position:top}
+.lap-hello small{display:block;font-size:6px;color:#8a7a4a;letter-spacing:.8px;text-transform:uppercase}
+.lap-hello b{display:block;font-size:10px;color:#0b315c}
+.lap-hello em{font-size:6.5px;color:#a58043}
+.lap-tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:5px}
+.lap-tiles div{border:1px solid #e6e2d6;border-radius:4px;padding:7px 4px;text-align:center}
+.lap-tiles strong{display:block;font-size:11px;color:#0b315c}
+.lap-tiles small{display:block;font-size:5.5px;color:#667887;margin-top:2px}
+.lap-tiles .earn{background:#0c2c47}
+.lap-tiles .earn strong{font-size:8px;color:#f0e6d2}
+.lap-tiles .earn small{color:#c7b686}
+.lap-sec{font-size:8px;color:#0b315c;letter-spacing:.4px}
+.lap-rows{display:flex;flex-direction:column;gap:5px}
+.lap-rows span{display:flex;align-items:center;gap:7px;font-size:6.5px;border:1px solid #eee9dc;border-radius:4px;padding:5px 6px}
+.lap-rows .sq{width:14px;height:14px;border-radius:4px;background:#dcf0e4;color:#1d6a44;display:flex;align-items:center;justify-content:center;font-size:8px;flex-shrink:0}
+.lap-rows u{flex:1;text-decoration:none;color:#43546a;font-weight:600;line-height:1.3}
+.lap-rows u small{display:block;font-weight:400;color:#93a3b1;font-size:5.5px}
+.lap-rows em{color:#a58043;font-weight:700;font-size:6px;white-space:nowrap}
+.lap-tag{position:relative;background:linear-gradient(#0c2c4790,#041e32e0),url('/assets/images/SupremeCourt.png') center 65%/cover no-repeat;display:flex;align-items:flex-end}
+.lap-tag em{font:italic 12px/1.4 Georgia,serif;color:#f0e4c6;padding:12px}
+
+/* Reference composition: copy, portrait, and a perspective portal laptop. */
+.lawyer-hero{padding:0;min-height:0;height:clamp(450px,33vw,570px);isolation:isolate}
+.hero-bg{z-index:-2;background:linear-gradient(90deg,#031b2df5 0%,#031b2de8 25%,#031b2d90 38%,#031b2d08 53%,#031b2d22 100%),url('/assets/images/Lawyer.png') 78% center/115% 100% no-repeat}
+.hero-grid{width:calc(100% - 44px);max-width:1640px;height:100%;min-height:0;align-items:flex-start}
+.hero-copy{max-width:none;width:49%;padding:36px 0 100px;position:relative;z-index:3}
+.hero-copy .eyebrow{font-size:clamp(8px,.75vw,12px);letter-spacing:2px;margin-bottom:10px;white-space:nowrap}
+.hero-copy .eyebrow span{display:none}
+.hero-copy h1{font-family:Georgia,serif;font-size:clamp(42px,4.65vw,76px);font-weight:700;letter-spacing:-2px;white-space:nowrap;line-height:1.1}
+.hero-copy h1 em{color:#f0e4c5;font-style:normal}
+.hero-sub{font:400 clamp(17px,1.8vw,28px)/1.25 Georgia,serif;color:#f4f0e7;margin-top:2px;white-space:nowrap}
+.hero-description{font-size:clamp(12px,.98vw,16px);line-height:1.5;max-width:74%;margin-top:16px;color:#d5dfe5}
+.hero-copy .actions{margin-top:20px;gap:14px}
+.hero-copy .button{font-size:clamp(11px,1vw,15px);padding:12px 22px;border-radius:6px;min-height:44px;box-shadow:inset 0 0 0 2px #ffffff16}
+.stats-bar{position:absolute;top:calc(clamp(450px,33vw,570px) - 88px);left:-22px;width:calc(100% + 22px);height:88px;margin:0;padding:18px 22px;gap:18px;grid-template-columns:repeat(4,minmax(0,1fr));align-items:center;background:linear-gradient(90deg,#052b43ef,#06283ad9);border-top:1px solid #b1b6a62b}
+.stat{gap:10px;min-width:0}
+.stat legal-icon{font-size:30px;flex-shrink:0}
+.stat strong{font-size:clamp(12px,1.1vw,17px);font-weight:600;white-space:nowrap}
+.stat small{display:block;font-size:clamp(8px,.66vw,11px);line-height:1.4;color:#c4d1da;margin-top:3px}
+.law-quote{left:60%;right:auto;top:25px;width:14%;max-width:230px;padding:12px 16px;font-size:clamp(11px,1vw,16px);line-height:1.3;background:#061b2bd9;color:#eee9d9;border-color:#b9a27680;border-radius:5px;box-shadow:0 6px 20px #0003}
+.hero-motto{position:absolute;right:3%;top:15px;text-align:center;font:italic clamp(12px,1.1vw,17px)/1.2 Georgia,serif;color:#f0dfb8;text-shadow:0 2px 6px #001529;z-index:1}
+.lap-card{display:block;right:2.5%;bottom:25px;width:33%;border:7px solid #111a22;border-radius:14px 14px 6px 6px;outline:2px solid #8e969b;transform:perspective(1100px) rotateY(-7deg) rotateZ(2deg) skewX(-7deg);transform-origin:bottom center;container-type:inline-size;box-shadow:0 16px 24px #0008}
+.lap-card:after{display:none}
+.lap-bar{height:8cqw;padding:1.5cqw 2cqw;font-size:2cqw}
+.lap-brand b{font-size:2.1cqw}.lap-brand legal-icon{font-size:4cqw}.lap-btics{font-size:2.5cqw;gap:2cqw}
+.lap-main{grid-template-columns:20% 60% 20%;min-height:0;height:59cqw}
+.lap-side{padding:2cqw 0;gap:.8cqw}
+.lap-side span{flex-direction:row;padding:1.4cqw 1.5cqw;gap:1.3cqw;font-size:1.65cqw;letter-spacing:0;white-space:nowrap}
+.lap-side span legal-icon{font-size:2.6cqw;flex-shrink:0}
+.lap-side span.on{background:#215a85;color:white}.lap-side span.on legal-icon{color:#d6e9f4}
+.lap-content{padding:2cqw;gap:2cqw;background:#f7fafc}
+.lap-hello{background:white;padding:1cqw;border:0;gap:1.5cqw}.lap-hello img{width:7cqw;height:8cqw}.lap-hello small{font-size:1.7cqw;letter-spacing:0}.lap-hello b{font-size:2.7cqw}.lap-hello em{font-size:1.6cqw;color:#637787}
+.lap-tiles{gap:1cqw}.lap-tiles div{padding:2cqw .5cqw;background:white;border-color:#e7edf1}.lap-tiles strong{font-size:3cqw}.lap-tiles small{font-size:1.65cqw;line-height:1.4}.lap-tiles .earn{background:white}.lap-tiles .earn strong{font-size:2cqw;color:#134b41}.lap-tiles .earn small{color:#667887}
+.lap-sec{font-size:2cqw;letter-spacing:0}.lap-rows{gap:1cqw}.lap-rows span{font-size:1.55cqw;padding:1.2cqw .5cqw;gap:1cqw;background:white;border:0}.lap-rows .sq{width:3.8cqw;height:3.8cqw;font-size:2cqw;background:#108c78;color:white}.lap-rows u small{font-size:1.4cqw}.lap-rows em{font-size:1.45cqw;color:#315b79}.lap-tag em{font-size:3cqw;padding:2cqw}
+.lap-keyboard{position:absolute;top:100%;left:-5%;width:110%;height:18px;background:linear-gradient(#b4bcc3,#4a5660 45%,#adb4ba 55%,#293745);border-radius:0 0 50% 35%;box-shadow:0 8px 12px #0006}.lap-keyboard i{display:block;width:18%;height:5px;margin:auto;background:#53616b;border-radius:0 0 8px 8px}
+@media(min-width:1700px){.hero-copy{padding-top:55px}.hero-description{max-width:70%}}
+@media(max-width:1050px){.lawyer-hero{height:480px}.hero-copy{width:57%;padding-top:32px}.hero-copy h1{font-size:5vw}.hero-sub{white-space:normal;max-width:90%}.hero-description{max-width:80%}.stats-bar{top:392px;width:108%}.stat legal-icon{font-size:23px}.law-quote{left:62%;top:32px;width:17%;font-size:11px}.hero-motto{right:2%;font-size:11px}.lap-card{width:37%;bottom:24px;right:2%}.hero-bg{background-size:auto,auto 100%;background-position:center,64% center}}
+@media(max-width:700px){.lawyer-hero{height:auto;padding-bottom:0}.hero-bg{background:linear-gradient(180deg,#031b2d 0%,#031b2df5 37%,#031b2d00 62%),url('/assets/images/Lawyer.png') 61% bottom/auto 370px no-repeat}.hero-grid{width:calc(100% - 36px);display:block}.hero-copy{width:100%;padding:30px 0 350px}.hero-copy .eyebrow{white-space:normal;font-size:8px;letter-spacing:1.5px;max-width:340px}.hero-copy h1{font-size:clamp(30px,7.6vw,50px);letter-spacing:-1px}.hero-sub{font-size:19px;max-width:100%;margin-top:8px}.hero-description{max-width:100%;font-size:13px;margin-top:14px}.hero-copy .actions{gap:10px;margin-top:18px}.hero-copy .button{padding:11px 13px;font-size:11px}.stats-bar{top:auto;bottom:0;left:-18px;width:calc(100% + 36px);height:92px;padding:14px 18px;gap:12px;grid-template-columns:repeat(2,minmax(0,1fr));z-index:4;background:#05243bea}.stat{gap:8px}.stat legal-icon{font-size:23px}.stat strong{font-size:12px}.stat small{font-size:8px;margin-top:0}.law-quote{left:18px;top:auto;bottom:225px;width:28%;padding:10px;font-size:10px}.hero-motto{top:auto;bottom:305px;right:18px;font-size:10px}.lap-card{width:55%;right:5%;bottom:112px;border-width:5px;border-radius:9px 9px 4px 4px}.lap-keyboard{height:12px}}
+@media(min-width:1051px){.hero-bg{background-size:auto,115% 155%;background-position:center,78% bottom}.lap-card{right:5%}}
+@media(min-width:1051px){.law-quote{left:64.5%;width:14%;top:24px}}
+@media(max-width:700px){.hero-bg{background-position:center,80% bottom}.lap-card{width:53%;right:9%}.law-quote{bottom:265px;width:32%;font-size:9px}}
+@media(max-width:700px){.stats-bar{height:110px}.hero-copy{padding-bottom:370px}.lap-card{bottom:130px}.law-quote{bottom:283px}.hero-motto{bottom:323px}}
+@media(max-width:360px){.hero-copy h1{font-size:28px}.hero-copy .button{padding-inline:10px}.market-grid>*{min-width:0}.task-card{overflow-x:auto}.card-head{flex-wrap:wrap}.tabs{flex-wrap:wrap}}

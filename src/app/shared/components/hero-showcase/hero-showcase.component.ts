@@ -12,7 +12,7 @@ import { LegalIconComponent } from '../legal-icon/legal-icon.component';
 export class HeroShowcaseComponent {
   audiences = [
     { name: 'Client', detail: 'Get Legal Help', icon: 'users', color: 'client', route: '/clients', role: '' },
-    { name: 'Lawyer', detail: 'Work & Earn', icon: 'user', color: 'lawyer', route: '/auth/register', role: 'Lawyer' },
+    { name: 'Lawyer', detail: 'Work & Earn', icon: 'user', color: 'lawyer', route: '/for-lawyers', role: '' },
     { name: 'Law Firm', detail: 'Manage & Grow', icon: 'building', color: 'firm', route: '/contact', role: '' },
     { name: 'Student', detail: 'Learn & Build', icon: 'cap', color: 'student', route: '/auth/register', role: 'Student' },
     { name: 'Legal Aid & Donors', detail: 'Access Justice', icon: 'heart', color: 'donor', route: '/donate', role: '' }

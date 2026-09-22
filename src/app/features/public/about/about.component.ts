@@ -45,12 +45,12 @@ export class AboutComponent {
     {icon:'cap', name:'Student', text:'Learns, Practices, Interns, Builds Career', color:'#33617f', route:'/courses', role:''},
     {icon:'scale', name:'Legal Aid', text:'Supports Legal Aid, Connects Donors, Lawyers', color:'#a8842f', route:'/donate', role:''},
     {icon:'heart', name:'Donor', text:'Supports Justice, Sees Transparent Utilisation', color:'#7c2740', route:'/donate', role:''},
-    {icon:'user', name:'Lawyer', text:'Provides Legal Services & Builds Practice', color:'#7a5a26', route:'/auth/register', role:'Lawyer'}
+    {icon:'user', name:'Lawyer', text:'Provides Legal Services & Builds Practice', color:'#7a5a26', route:'/for-lawyers', role:''}
   ];
   outcomes = ['More Access to Justice','More Opportunities','More Skilled Professionals','Stronger Communities','A Brighter, Fairer Pakistan'];
   roles = [
     {icon:'users', cls:'role-client', label:'Client portal', title:'I Need Legal Help', text:'Consult with verified lawyers, book appointments, submit cases and track progress — all in one place.', cta:'Get Legal Help', route:'/auth/register', role:'Client', footer:'Your Legal Journey. Our Priority.'},
-    {icon:'user', cls:'role-lawyer', label:'Lawyer portal', title:'I Am a Lawyer', text:'Get clients, work on real cases, use AI tools, grow your practice and earn more.', cta:'Work & Earn', route:'/auth/register', role:'Lawyer', footer:'Your Expertise. Greater Impact.'},
+    {icon:'user', cls:'role-lawyer', label:'Lawyer portal', title:'I Am a Lawyer', text:'Get clients, work on real cases, use AI tools, grow your practice and earn more.', cta:'Work & Earn', route:'/for-lawyers', role:'', footer:'Your Expertise. Greater Impact.'},
     {icon:'building', cls:'role-firm', label:'Law firm portal', title:'I Run a Law Firm', text:'Manage clients, cases, lawyers, documents, payments and operations digitally.', cta:'Manage & Grow', route:'/contact', role:'', footer:'A More Efficient, More Profitable Firm.'},
     {icon:'cap', cls:'role-student', label:'Student portal', title:'I Am a Law Student', text:'Learn law, build practical skills, find internships and opportunities for a brighter future.', cta:'Learn & Build Your Career', route:'/auth/register', role:'Student', footer:'Learn Today. Lead Tomorrow.'},
     {icon:'heart', cls:'role-donor', label:'Legal aid & donor portal', title:'I Want to Support Access to Justice', text:'Support legal aid, track cases, transparent utilisation and real impact.', cta:'Give Transparently', route:'/donate', role:'', footer:'Justice Within Reach. For Every Pakistani.'}
