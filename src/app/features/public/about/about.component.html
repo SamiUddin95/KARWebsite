@@ -47,11 +47,13 @@
       <div class="orbit-ring ring-inner"></div>
       <div class="orbit-spin spin-a"><span class="orbit-ball"></span><span class="orbit-ball bottom"></span></div>
       <div class="orbit-spin spin-b"><span class="orbit-ball"></span></div>
-      @for(node of nodes; track node.name; let i = $index){<span [class]="'connector connector-'+i"></span>}
       <div class="orbit-center"><legal-icon name="scale"/><strong>Digital Law Firm</strong><small>Justice. Simplified.</small></div>
-      @for(node of nodes; track node.name; let i = $index){
-        <a [class]="'eco-node node-'+i" [routerLink]="node.route" [queryParams]="node.role ? {role:node.role} : {}"><div class="node-circle" [style.background]="node.color"><legal-icon [name]="node.icon"/><strong>{{node.name}}</strong><small>{{node.text}}</small></div></a>
-      }
+      <div class="node-track">
+        @for(node of nodes; track node.name; let i = $index){<span [class]="'connector connector-'+i"></span>}
+        @for(node of nodes; track node.name; let i = $index){
+          <a [class]="'eco-node node-'+i" [routerLink]="node.route" [queryParams]="node.role ? {role:node.role} : {}"><div class="node-circle" [style.background]="node.color"><legal-icon [name]="node.icon"/><strong>{{node.name}}</strong><small>{{node.text}}</small></div></a>
+        }
+      </div>
     </div>
     <div class="eco-panel">
       <blockquote>“Connected People.<br>Greater Opportunities.<br>A More Just Pakistan.”</blockquote>

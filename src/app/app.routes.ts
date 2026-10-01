@@ -20,7 +20,7 @@ export const routes: Routes = [
       { path: 'practice-areas', loadComponent: () => import('./features/public/practice-areas/practice-areas.component').then(m => m.PracticeAreasComponent) },
       { path: 'courts', loadComponent: () => import('./features/public/courts/courts.component').then(m => m.CourtsComponent) },
       { path: 'courses', loadComponent: () => import('./features/public/student-page/student-page.component').then(m => m.StudentPageComponent) },
-      { path: 'donate', loadComponent: () => import('./features/public/donate/donate.component').then(m => m.DonateComponent) },
+      { path: 'donate', loadComponent: () => import('./features/public/donor-page/donor-page.component').then(m => m.DonorPageComponent) },
       { path: 'about', loadComponent: () => import('./features/public/about/about.component').then(m => m.AboutComponent) },
       { path: 'contact', loadComponent: () => import('./features/public/contact/contact.component').then(m => m.ContactComponent) },
       { path: 'faq', loadComponent: () => import('./features/public/faq/faq.component').then(m => m.FaqComponent) },

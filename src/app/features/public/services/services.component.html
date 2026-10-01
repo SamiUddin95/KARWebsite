@@ -1,0 +1,248 @@
+<section class="svc-hero">
+  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <h1>Justice. Simplified.</h1>
+      <p class="hero-sub">One Digital Legal Ecosystem. Every Legal Journey.</p>
+      <p class="hero-description">Digital Law Firm brings legal services, professional opportunities, legal education, technology and access to justice together on one secure digital platform.</p>
+      <div class="actions">
+        <a routerLink="/auth/register" class="button gold-button">Get Started <legal-icon name="arrow"/></a>
+        <a href="#ecosystem" class="button outline-button">Explore the Ecosystem</a>
+      </div>
+      <a class="story-link" routerLink="/"><legal-icon name="play"/> Watch Our Story</a>
+    </div>
+    <div class="hero-media">
+      <div class="laptop">
+        <div class="laptop-screen">
+          <div class="dash-top">
+            <span class="dt-brand"><legal-icon name="scale"/><div><b>DIGITAL LAW FIRM</b><small>Justice. Simplified.</small></div></span>
+            <span class="dt-links"><b>Home</b><b>Portals</b><b>Services</b></span>
+            <span class="dt-user"><i class="bell">◔</i><img src="assets/images/man.png" alt="User"><div><b>Asad Khan</b><small>Client</small></div></span>
+          </div>
+          <div class="dash-body">
+            <div class="dash-banner"><div><strong>Your Legal<br>Journey Starts<br>Here.</strong><a>Access Legal Services →</a></div></div>
+            <div class="dash-tiles">
+              <div class="dash-tile"><strong>2</strong><small>Active Cases</small></div>
+              <div class="dash-tile"><strong>1</strong><small>Hearing</small></div>
+              <div class="dash-tile"><strong>3</strong><small>Messages</small></div>
+            </div>
+          </div>
+        </div>
+        <div class="laptop-keyboard"><span></span></div><div class="laptop-base"></div>
+      </div>
+      <div class="phone">
+        <div class="phone-notch"></div>
+        <div class="phone-screen">
+          <div class="phone-top">
+            <span class="phone-logo"><legal-icon name="scale"/><div><b>DIGITAL LAW FIRM</b><small>Justice. Simplified.</small></div></span>
+            <strong>Get Legal Help,<br>On the Go.</strong>
+          </div>
+          <ul>@for(m of phoneMenu; track m; let i = $index){<li><i><legal-icon [name]="phoneIcons[i]"/></i>{{m}}</li>}</ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="wrap stats-bar">
+    @for(s of stats; track s.label){
+      <div class="stat"><legal-icon [name]="s.icon"/><div>@if(s.value){<strong>{{s.value}}</strong>}<small>{{s.label}}</small></div></div>
+    }
+  </div>
+</section>
+
+<section class="eco section" id="ecosystem">
+  <div class="wrap eco-grid">
+    <div class="eco-copy">
+      <div class="sec-head"><i>2.</i><h2>WHAT IS DIGITAL LAW FIRM?</h2></div>
+      <h3>More Than a Law Firm.<br>A Digital Legal Ecosystem.</h3>
+      <p>Digital Law Firm is designed to bridge the justice gap through connected legal services, education and opportunity. It brings people seeking legal assistance together with verified lawyers, law firms, students and donors — on one trusted platform built for Pakistan.</p>
+      <a routerLink="/about" class="button gold-button">Learn More About Our Mission <legal-icon name="arrow"/></a>
+    </div>
+    <div class="eco-visual">
+      <p class="eco-quote">"Technology<br>for a more just<br>Pakistan."</p>
+      <div class="eco-orbit" aria-label="Five connected legal communities">
+        <div class="orbit-glow" aria-hidden="true"></div>
+        <div class="orbit-ring"></div>
+        <div class="orbit-spin spin-a" aria-hidden="true"><span class="orbit-ball"></span><span class="orbit-ball bottom"></span></div>
+        <div class="orbit-spin spin-b" aria-hidden="true"><span class="orbit-ball"></span></div>
+        <div class="orbit-center"><legal-icon name="scale"/><strong>DIGITAL LAW FIRM</strong><small>Justice. Simplified.</small></div>
+        <div class="node-track">
+          @for(node of ecoNodes; track node.name; let i = $index){
+            <a [class]="'eco-node node-'+i" [routerLink]="node.route"><div class="node-circle" [style.background]="node.color"><legal-icon [name]="node.icon"/><strong>{{node.name}}</strong><small>{{node.text}}</small></div></a>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="portals-journey section">
+  <div class="wrap duo2-grid">
+    <div class="portals-panel">
+    <div class="sec-head"><i>3.</i><h2>ONE PLATFORM. FIVE PORTALS.</h2><p class="sec-sub">Different Journeys. A Common Purpose — Justice.</p></div>
+    <div class="portal-grid">
+      @for(p of portals; track p.tag){
+        <article [class]="'portal-card '+p.cls">
+          <div class="portal-img"><img [src]="p.img" [alt]="p.tag + ' portal'" loading="lazy"></div>
+          <div class="portal-body">
+            <b class="portal-tag">{{p.tag}}</b>
+            <em>{{p.tagline}}</em>
+            <ul>@for(item of p.items; track item){<li><legal-icon name="check"/>{{item}}</li>}</ul>
+            <a [routerLink]="p.route" class="button portal-btn">{{p.cta}} <legal-icon name="arrow"/></a>
+          </div>
+        </article>
+      }
+    </div>
+    </div>
+    <div class="journey-panel-wrap">
+      <div class="sec-head"><i>4.</i><h2>CLIENT JOURNEY</h2><p class="sec-sub">From your first question to your case file — digitally connected.</p></div>
+      <client-journey/>
+    </div>
+  </div>
+</section>
+
+<section class="lawyer-member section">
+  <div class="wrap duo3-grid">
+    <div class="lawyer-panel">
+      <div class="sec-head"><i>5.</i><h2>LAWYER PORTAL</h2><p class="sec-sub">Turn Your Legal Expertise Into Digital Opportunity.</p></div>
+      <div class="lawyer-grid">
+        <div class="lawyer-photo"><img src="assets/images/lawyerman.png" alt="Lawyer holding a file"></div>
+        <ul class="feat-list">
+          @for(f of lawyerFeatures; track f.title){<li><legal-icon [name]="f.icon"/>{{f.title}}</li>}
+        </ul>
+        <div class="lawyer-phone">
+          <div class="phone mini">
+            <div class="phone-notch"></div>
+            <div class="phone-screen">
+              <div class="phone-top mp">
+                <div class="mp-user"><img src="assets/images/man.png" alt=""><div><b>Good Morning,</b><strong>Adv. Ahmed Khan</strong><span class="mp-badge">⚖ High Court Practitioner</span></div></div>
+              </div>
+              <div class="mp-stats">
+                <div><b>12</b><small>Total Tasks</small></div>
+                <div><b>8</b><small>Active Cases</small></div>
+                <div><b>3</b><small>Appointments</small></div>
+              </div>
+              <div class="mp-earn"><b>PKR 185,000</b><small>Earnings This Month</small><div class="mp-bars"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
+              <div class="mp-nav"><span>Home</span><span>Tasks</span><span>Cases</span><span>More</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row-end col-start">
+        <a routerLink="/for-lawyers" class="button navy-button">Join as a Lawyer <legal-icon name="arrow"/></a>
+        <blockquote class="left-quote">"Your expertise. Greater impact."</blockquote>
+      </div>
+    </div>
+    <div class="member-panel">
+      <div class="sec-head"><i>6.</i><h2>PROFESSIONAL MEMBERSHIP CATEGORIES</h2><p class="sec-sub">Access based on qualification, experience and professional status.</p></div>
+      <div class="member-grid">
+        @for(m of memberships; track m.name){
+          <div [class]="'member '+m.cls">
+            <legal-icon name="building"/>
+            <b>{{m.name}}</b>
+            <span>{{m.court}}@if(m.years){<br>{{m.years}}}</span>
+            <small>{{m.detail}}</small>
+          </div>
+        }
+      </div>
+      <div class="row-end">
+        <a routerLink="/for-lawyers" class="button gold-button">Explore Professional Membership <legal-icon name="arrow"/></a>
+        <blockquote>"Different Roles.<br>A Stronger Legal Ecosystem."</blockquote>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="student-aid section">
+  <div class="wrap duo4-grid">
+    <div class="student-panel">
+    <div class="sec-head"><i>7.</i><h2>STUDENT PORTAL</h2><p class="sec-sub">Learn. Practice. Certify. Intern. Refer. Earn. Build Your Career.</p></div>
+    <div class="student-grid">
+      <div class="student-photo">
+        <img src="assets/images/student.png" alt="Law student">
+        <div class="photo-quote"><em>"Move beyond textbooks. Build a brighter legal future."</em><a routerLink="/courses" class="button gold-button">Join Student Portal</a></div>
+      </div>
+      <div class="lawyer-phone">
+        <div class="phone mini">
+          <div class="phone-notch"></div>
+          <div class="phone-screen">
+            <div class="phone-top"><span class="phone-logo"><legal-icon name="scale"/><div><b>Good Morning,</b><small>Ahmed</small></div></span></div>
+            <ul>
+              <li><i><legal-icon name="book"/></i><div><b>4</b><small>Courses in Progress</small></div></li>
+              <li><i><legal-icon name="file"/></i><div><b>3</b><small>Assignments</small></div></li>
+              <li><i><legal-icon name="briefcase"/></i><div><b>2</b><small>Internship Apps</small></div></li>
+            </ul>
+            <div class="phone-card"><b>PKR 185,000</b><small>Referral Earnings</small></div>
+          </div>
+        </div>
+      </div>
+      <ul class="feat-list">
+        @for(f of studentFeatures; track f.title){<li><legal-icon [name]="f.icon"/>{{f.title}}</li>}
+      </ul>
+    </div>
+    </div>
+    <div class="aid-panel">
+    <div class="sec-head"><i>8.</i><h2>LEGAL AID &amp; DONORS</h2><p class="sec-sub">Access to Justice. Transparent Giving.</p></div>
+    <div class="aid-grid">
+      <div class="aid-copy">
+        <h3>Justice Should Not Depend<br>on your Ability to Pay.</h3>
+        <p>Apply for free legal aid if you genuinely cannot afford legal representation, or support the Legal Aid Fund to help make justice possible for those in need.</p>
+        <div class="actions">
+          <a routerLink="/auth/register" [queryParams]="{role:'Client'}" class="button maroon-button">Apply for Free Legal Aid <legal-icon name="arrow"/></a>
+          <a routerLink="/auth/register" [queryParams]="{role:'Donor'}" class="button navy-button">Become a Donor</a>
+        </div>
+        <p class="aid-motto">"A more just Pakistan is possible."</p>
+      </div>
+      <div class="aid-impact">
+        <b class="impact-title">Your Impact</b>
+        <div class="impact-grid">
+          @for(s of impactStats; track s.label){<div class="impact"><strong>{{s.value}}</strong><small>{{s.label}}</small></div>}
+        </div>
+        <div class="impact-cases">
+          @for(c of impactCases; track c.label){<div><strong>{{c.value}}</strong><small>{{c.label}}</small></div>}
+        </div>
+        <div class="actions">
+          <a routerLink="/donate" class="button gold-button">Donate Now</a>
+          <a routerLink="/donate" class="button navy-button">View Fund Activity</a>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+</section>
+
+<section class="duo section">
+  <div class="wrap duo-grid">
+    <div class="ai-panel">
+      <div class="sec-head"><i>9.</i><h2>AI LEGAL TECHNOLOGY</h2><p class="sec-sub">AI tools built into your legal journey.</p></div>
+      <div class="ai-grid">
+        <div class="ai-intro">
+          <h3>Smarter Legal Work.<br>Better Legal Learning.</h3>
+          <p>AI-assisted drafting, legal research, case analysis and educational tools for clients, lawyers, law firms and students.</p>
+          <a routerLink="/auth/login" class="button navy-button">Explore AI Tools</a>
+        </div>
+        @for(t of aiTools; track t.title){
+          <div class="ai-card">
+            <h4><legal-icon [name]="t.icon"/>{{t.title}}</h4>
+            <p>{{t.text}}</p>
+            <ul>@for(item of t.items; track item){<li><legal-icon name="file"/>{{item}}</li>}</ul>
+            <a [routerLink]="t.route" class="button navy-button">{{t.cta}} <legal-icon name="arrow"/></a>
+          </div>
+        }
+      </div>
+      <p class="ai-note">AI assists. Lawyers decide. All generated information should be independently verified against authoritative legal sources.</p>
+    </div>
+    <div class="roles-panel">
+      <div class="sec-head"><i>10.</i><h2>WHATEVER YOUR ROLE IN LAW, THERE IS A PLACE FOR YOU HERE.</h2></div>
+      <div class="role-grid">
+        @for(r of roles; track r.title){
+          <div [class]="'role '+r.cls">
+            <legal-icon [name]="r.icon"/>
+            <b>{{r.title}}</b>
+            <small>{{r.portal}}</small>
+            <a [routerLink]="r.route" class="button">{{r.cta}} <legal-icon name="arrow"/></a>
+          </div>
+        }
+      </div>
+    </div>
+  </div>
+</section>

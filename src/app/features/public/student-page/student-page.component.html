@@ -53,10 +53,12 @@
       <h2>Why Choose the Student Portal?</h2>
       <p class="why-sub">Everything you need to learn, practice and launch your legal career — in one place.</p>
       <div class="why-list">
-        @for(w of why; track w.tag){
-          <div class="why-row">
-            <div class="why-copy"><small>{{w.tag}}</small><strong>{{w.title}}</strong><p>{{w.text}}</p><em>{{w.caption}}</em></div>
+        @for(w of why; track w.tag; let i = $index){
+          <div class="why-card">
+            <div class="w-head"><i class="w-num">{{i+1}}</i><legal-icon [name]="w.icon"/><small>{{w.tag}}</small></div>
+            <p>{{w.text}}</p>
             <img [src]="w.img" [alt]="w.title">
+            <em>{{w.caption}}</em>
           </div>
         }
       </div>
@@ -75,68 +77,66 @@
     <div class="start-card">
       <h3>Get Started Today</h3>
       <p>Join the Digital Law Firm Student Portal and take the first step towards your legal career.</p>
-      <ul>@for(c of startChecks; track c){<li><legal-icon name="check"/>{{c}}</li>}</ul>
+      <ul>@for(c of startChecks; track c){<li><span class="ck"><legal-icon name="check"/></span>{{c}}</li>}</ul>
       <div class="start-actions"><a routerLink="/auth/register" [queryParams]="{role:'Student'}" class="button gold-button">Create Your Account <legal-icon name="arrow"/></a><span>Already a member? <a routerLink="/auth/login">Login</a></span></div>
       <img class="start-img" src="assets/images/man.png" alt="Law student">
       <em class="start-quote">"A Better<br>Lawyer<br>A Brighter<br>Pakistan"</em>
     </div>
     <div class="dash-card">
-      <div class="card-head"><div><h3>Student Dashboard <span class="pv">(Preview)</span></h3><small>Your progress. Your growth. Your future.</small></div><a routerLink="/student/dashboard">View Full Dashboard →</a></div>
+      <div class="card-head"><div><h3>Student Dashboard <span class="pv">(Preview)</span></h3><small>Your progress. Your goals. Your future.</small></div><a routerLink="/student/dashboard">View Full Dashboard →</a></div>
       <div class="dash-tiles">
         @for(d of dashTiles; track d.label){
-          <div class="d-tile"><span class="t-ico"><legal-icon [name]="d.icon"/></span><strong>{{d.value}}</strong><div><small>{{d.label}}</small><em>{{d.sub}}</em></div></div>
+          <div class="d-tile"><span class="t-ico"><legal-icon [name]="d.icon"/></span><div class="t-body"><small>{{d.label}}</small><strong>{{d.value}} <em>{{d.sub}}</em></strong>@if(d.prog){<i class="t-bar"><b [style.width.%]="d.prog"></b></i>}</div></div>
         }
       </div>
-      <div class="dash-session"><h4>Upcoming Sessions</h4><p><i class="dot"></i><span>Constitutional Law Live Session<small>Tomorrow, 5:00 PM</small></span></p></div>
-      <em class="dash-quote">"Discipline today becomes tomorrow's courtroom success."</em>
-    </div>
-  </div>
-</section>
-
-<section class="programs section">
-  <div class="wrap">
-    <div class="card-head big"><div><h2>Learning Programs Marketplace</h2><p>Explore our curated legal learning programs.</p></div><a routerLink="/courses">View All Programs →</a></div>
-    <div class="p-tabs">@for(t of tabs; track t; let i = $index){<b [class.on]="i===0">{{t}}</b>}</div>
-    <div class="prog-grid">
-      @for(p of programs; track p.title){
-        <div class="prog-card"><img [src]="p.img" [alt]="p.title"><div class="prog-body"><b>{{p.title}}</b><div class="prog-meta"><span><legal-icon name="book"/>{{p.lessons}}</span><strong>{{p.price}}</strong></div></div></div>
-      }
-    </div>
-  </div>
-</section>
-
-<section class="player section">
-  <div class="wrap">
-    <div class="card-head big"><div><h2>Program Details &amp; Course Player</h2><p>High-quality, engaging, practical learning experience.</p></div></div>
-    <div class="player-card">
-      <div class="player-screen">
-        <img src="assets/images/man.png" alt="Course instructor">
-        <div class="p-shade"></div>
-        <span class="p-badge"><legal-icon name="play"/></span>
-        <div class="p-caption"><small>Introduction to</small><b>Constitutional Law of Pakistan</b><small>Lecture 1: Key Principles</small></div>
-        <div class="p-bar"><i></i><small>0:00 / 28:15</small></div>
+      <div class="dash-bottom">
+        <div class="d-tile ref"><span class="t-ico"><legal-icon name="card"/></span><div class="t-body"><small>Referral Earnings</small><strong>PKR 12,500</strong><em>Total Earned</em></div></div>
+        <div class="dash-session"><h4><legal-icon name="calendar"/> Upcoming Sessions</h4><p><b>Constitutional Law</b><span>Live Session</span><small>Tomorrow, 5:00 PM</small></p></div>
+        <em class="dash-quote">"Discipline today becomes a distinguished tomorrow."</em>
       </div>
-      <div class="p-tabs"><b class="on">Overview</b><b>Curriculum</b><b>Materials</b><b>Instructor</b><b>Reviews</b></div>
     </div>
   </div>
 </section>
 
-<section class="ai section">
-  <div class="wrap">
-    <div class="card-head big"><div><h2>AI Legal Assistant &amp; Research</h2><p>Access AI Grounded in Pakistani Law.</p></div></div>
-    <div class="ai-grid">
-      <div class="ai-chat">
-        <div class="p-tabs"><b class="on">Legal Assistant</b><b>Legal Research</b></div>
-        <div class="chat-body">
-          <p class="msg">Explain Article 199 of the Constitution</p>
-          <p class="msg alt">Draft a legal notice</p>
-          <p class="msg">Summarize a Supreme Court judgment on criminal procedure</p>
+<section class="mp section">
+  <div class="wrap mp-grid">
+    <div class="mp-col">
+      <div class="card-head big"><div><h2>Learning Programs Marketplace</h2><p>Explore our curated legal learning programs.</p></div><a routerLink="/courses">View All Programs →</a></div>
+      <div class="p-tabs">@for(t of tabs; track t; let i = $index){<b [class.on]="i===0">{{t}}</b>}</div>
+      <div class="prog-grid">
+        @for(p of programs; track p.title){
+          <div class="prog-card"><img [src]="p.img" [alt]="p.title"><div class="prog-body"><b>{{p.title}}</b><div class="prog-meta"><span><legal-icon name="book"/>{{p.lessons}}</span><strong>{{p.price}}</strong></div></div></div>
+        }
+      </div>
+    </div>
+    <div class="mp-col">
+      <div class="card-head big"><div><h2>Program Details &amp; Course Player</h2><p>High-quality, engaging, practical learning experience.</p></div></div>
+      <div class="player-card">
+        <div class="player-screen">
+          <img src="assets/images/man.png" alt="Course instructor">
+          <div class="p-shade"></div>
+          <span class="p-badge"><legal-icon name="play"/></span>
+          <div class="p-caption"><small>Introduction to</small><b>Constitutional Law of Pakistan</b><small>Lecture 1: Key Principles</small></div>
+          <div class="p-bar"><i></i><small>0:00 / 28:15</small><span class="p-ctl"><legal-icon name="play"/> 1×</span></div>
         </div>
+        <div class="p-tabs"><b class="on">Overview</b><b>Curriculum</b><b>Materials</b><b>Instructor</b><b>Reviews</b></div>
       </div>
-      <div class="ai-sources">
-        <h4>Search Millions of Sources</h4>
-        <ul>@for(s of aiSources; track s){<li><legal-icon name="check"/>{{s}}</li>}</ul>
-        <a class="button navy-btn" routerLink="/auth/register">Search Legal Database <legal-icon name="arrow"/></a>
+    </div>
+    <div class="mp-col">
+      <div class="card-head big"><div><h2>AI Legal Assistant &amp; Research</h2><p>Powered by AI. Grounded in Pakistani Law.</p></div></div>
+      <div class="ai-card">
+        <div class="ai-left">
+          <div class="p-tabs"><b class="on">Legal Assistant</b><b>Legal Research</b></div>
+          <div class="ai-in"><i class="ai-ico"><legal-icon name="sparkle"/></i><span>Ask anything about Pakistani law...</span><legal-icon name="search"/></div>
+          <div class="ai-chips">
+            @for(c of aiChips; track c){<span>{{c}}</span>}
+          </div>
+        </div>
+        <div class="ai-src">
+          <h4>Research Millions of Sources</h4>
+          <ul>@for(s of aiSources; track s){<li><legal-icon name="check"/>{{s}}</li>}</ul>
+          <a class="button navy-btn" routerLink="/auth/register">Search Legal Database <legal-icon name="arrow"/></a>
+        </div>
       </div>
     </div>
   </div>
@@ -145,33 +145,39 @@
 <section class="practical section">
   <div class="wrap prac-grid">
     <div class="p-card">
-      <h3>Practical Legal Training</h3>
-      <small>Case Study Lab — Practice and sharpen real skills.</small>
+      <small class="p-eyebrow">PRACTICAL LEGAL TRAINING</small>
+      <h3>Case Study Lab</h3>
+      <p class="p-sub">Learn by doing. Build real skills.</p>
       <ul>@for(c of trainingChecks; track c){<li><legal-icon name="check"/>{{c}}</li>}</ul>
-      <a class="button gold-button" routerLink="/courses">Explore Case Study Lab <legal-icon name="arrow"/></a>
+      <a class="button gold-button" routerLink="/courses">Explore Case Lab <legal-icon name="arrow"/></a>
       <img src="assets/images/Reaches.jpg" alt="Scales of justice">
     </div>
     <div class="p-card">
       <h3>Internship Opportunities</h3>
       <small>Connect with reputable law firms and organizations.</small>
       @for(i of internships; track i.org){
-        <div class="intern"><div><b>{{i.org}}</b><span>{{i.role}} · {{i.city}}</span></div><a routerLink="/auth/register">Apply</a></div>
+        <div class="intern"><i class="i-ico"><legal-icon name="building"/></i><div><b>{{i.org}}</b><span>{{i.role}}<br>{{i.city}} · {{i.months}}</span></div><a routerLink="/auth/register">Apply</a></div>
       }
-      <a class="vall" routerLink="/courses">View All Internships →</a>
+      <a class="vall" routerLink="/courses">View All Internship Opportunities →</a>
     </div>
     <div class="p-card">
       <h3>Certificates &amp; Verification</h3>
       <small>Showcase your achievements with verifiable certificates.</small>
-      <div class="cert"><b>CERTIFICATE OF COMPLETION</b><span>Ayesha Khan</span><small>Constitutional Law of Pakistan</small></div>
-      <ul>@for(c of certChecks; track c){<li><legal-icon name="check"/>{{c}}</li>}</ul>
-      <a class="vall" routerLink="/auth/register">View My Certificates →</a>
+      <div class="cert-row">
+        <div class="cert"><b>CERTIFICATE OF COMPLETION</b><span>Ayesha Khan</span><small>Constitutional Law of Pakistan</small><i class="qr"></i></div>
+        <ul>@for(c of certChecks; track c){<li><legal-icon name="check"/>{{c}}</li>}</ul>
+      </div>
+      <a class="button gold-button" routerLink="/auth/register">View My Certificates <legal-icon name="arrow"/></a>
     </div>
     <div class="p-card">
       <h3>Referral Program</h3>
       <small>Invite friends. Grow the community. Earn together.</small>
-      <div class="ref-code"><span>DLF-STU-7842</span><b>PKR 12,500<small>Total Earned</small></b></div>
+      <div class="ref-top">
+        <div class="ref-code"><small>Your Referral Code</small><b>DLF-STU-7842 <legal-icon name="file"/></b></div>
+        <div class="ref-earn"><small>Total Earnings</small><b>PKR 12,500</b><i class="mini-bars"><b></b><b></b><b></b><b></b><b></b></i></div>
+      </div>
       <div class="ref-stats">@for(r of referralStats; track r.label){<div><strong>{{r.value}}</strong><small>{{r.label}}</small></div>}</div>
-      <a class="button gold-button" routerLink="/auth/register">Refer &amp; Earn Today <legal-icon name="arrow"/></a>
+      <a class="button gold-button" routerLink="/auth/register">Refer &amp; Earn Now <legal-icon name="arrow"/></a>
     </div>
   </div>
 </section>
