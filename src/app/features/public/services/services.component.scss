@@ -132,18 +132,6 @@ blockquote{margin:0;font:italic 15px/1.5 Georgia,serif;color:#a58043;text-align:
 .portals-panel .portal-grid{flex:1;align-items:stretch}
 .duo2-grid .sec-head{margin-bottom:22px;flex-direction:column;align-items:flex-start;gap:4px}
 .duo2-grid .sec-sub{margin-left:0}
-.journey-panel-wrap{min-width:0;display:flex;flex-direction:column}
-.journey-panel-wrap client-journey{flex:1;display:flex;flex-direction:column}
-.journey-panel-wrap ::ng-deep .client-panels{grid-template-columns:1fr;flex:1}
-.journey-panel-wrap ::ng-deep .portrait-panel,
-.journey-panel-wrap ::ng-deep .reach-panel,
-.journey-panel-wrap ::ng-deep .journey-heading{display:none}
-.journey-panel-wrap ::ng-deep .journey-panel{padding:14px 10px 12px;height:100%}
-.journey-panel-wrap ::ng-deep .journey-phones{min-width:0}
-.journey-panel-wrap ::ng-deep .mini-screen{min-height:138px}
-.journey-panel-wrap ::ng-deep .journey-caption{font-size:16px;margin-top:10px}
-.journey-panel-wrap ::ng-deep .preview-note{margin-top:6px}
-
 /* Portals */
 .portal-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
 .portal-card{border-radius:10px;overflow:hidden;background:#fff;box-shadow:0 8px 24px #06253b14;display:flex;flex-direction:column}
@@ -174,29 +162,6 @@ blockquote{margin:0;font:italic 15px/1.5 Georgia,serif;color:#a58043;text-align:
 .lawyer-panel,.member-panel{display:flex;flex-direction:column}
 .lawyer-panel .row-end,.member-panel .row-end{margin-top:auto;padding-top:18px}
 .member-panel .row-end{margin-top:14px;padding-top:0}
-
-/* Lawyer phone mockup */
-.phone-top.mp{padding:16px 10px 10px}
-.mp-user{display:flex;align-items:center;gap:6px}
-.mp-user img{width:22px;height:22px;border-radius:50%;object-fit:cover;border:1px solid #d5b371}
-.mp-user b{display:block;font-size:5.5px;color:#c7b686;font-weight:500}
-.mp-user strong{display:block;font-size:8px;color:#fff;line-height:1.2}
-.mp-badge{display:inline-block;margin-top:3px;background:linear-gradient(110deg,#f0d59a,#d3ab5e);color:#102c42;font-size:4.5px;font-weight:700;padding:2px 5px;border-radius:3px}
-.mp-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:5px;padding:8px}
-.mp-stats>div{border:1px solid #e6e2d6;border-radius:5px;padding:6px 4px;text-align:center}
-.mp-stats b{display:block;font-size:10px;color:#0b315c}
-.mp-stats small{display:block;font-size:5px;color:#667887;margin-top:1px}
-.mp-earn{margin:0 8px 8px;border:1px solid #e6e2d6;border-radius:6px;padding:8px}
-.mp-earn b{display:block;font-size:10px;color:#0b315c}
-.mp-earn small{display:block;font-size:5px;color:#667887;margin-bottom:6px}
-.mp-bars{display:flex;align-items:flex-end;gap:3px;height:22px}
-.mp-bars i{flex:1;background:linear-gradient(#3d7ba8,#0c2c47);border-radius:1px 1px 0 0}
-.mp-bars i:nth-child(1){height:35%}.mp-bars i:nth-child(2){height:55%}.mp-bars i:nth-child(3){height:40%}
-.mp-bars i:nth-child(4){height:70%}.mp-bars i:nth-child(5){height:50%}.mp-bars i:nth-child(6){height:80%}
-.mp-bars i:nth-child(7){height:60%}.mp-bars i:nth-child(8){height:95%;background:linear-gradient(#e4c589,#a58043)}
-.mp-nav{display:flex;border-top:1px solid #eee9dc;padding:5px 0}
-.mp-nav span{flex:1;text-align:center;font-size:5px;color:#93a3b1}
-.mp-nav span:first-child{color:#a58043;font-weight:700}
 
 /* Lawyer / Student */
 .lawyer-grid,.student-grid{display:grid;grid-template-columns:.9fr .75fr 1fr;gap:20px;align-items:center}
