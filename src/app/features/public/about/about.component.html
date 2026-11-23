@@ -1,16 +1,14 @@
 <section class="about-hero">
   <div class="about-hero-photo"></div>
-  <span class="board-badge">BOARD 05 / 05</span>
   <div class="wrap hero-grid">
     <div class="hero-copy">
-      <p class="eyebrow"><span></span> WHY DIGITAL LAW FIRM</p>
-      <h1>Everything You Need From<br>a <em>Digital Legal Platform.</em></h1>
-      <p class="hero-description">Comprehensive legal services, powerful tools, and real opportunities — all in one connected ecosystem. Designed for a stronger, fairer Pakistan.</p>
-    </div>
-    <div class="hero-quote">
-      <blockquote>“Different People.<br>Different Journeys.<br>A stronger Pakistan.”</blockquote>
-
-      <p class="hero-tagline">Justice Through Technology.<br>For a Better Tomorrow.</p>
+      <p class="eyebrow">About us</p>
+      <h1>About Digital Law Firm</h1>
+      <p class="hero-description">Comprehensive legal services, practical tools and real opportunities — all in one connected platform. Designed and built for Pakistan.</p>
+      <div class="actions">
+        <a routerLink="/contact" class="button gold-button">Talk to our team <legal-icon name="arrow"/></a>
+        <a routerLink="/services" class="button outline-button">Explore services</a>
+      </div>
     </div>
   </div>
   <div class="wrap feature-grid">
@@ -22,9 +20,9 @@
 
 <section class="why section">
   <div class="wrap">
-    <div class="why-head">
-      <div><h2>Why Digital Law Firm?</h2><p>More than a platform — a movement for a fairer, stronger Pakistan.</p></div>
-      <blockquote>Innovation. Opportunity. A More Just Pakistan.</blockquote>
+    <div class="section-head">
+      <div><p class="eyebrow">Why Digital Law Firm</p><h2>More than a platform</h2></div>
+      <p class="section-sub">We connect people, knowledge and opportunity across the legal profession.</p>
     </div>
     <div class="value-grid">
       @for(value of values; track value.title){
@@ -37,9 +35,9 @@
 <section class="ecosystem section" id="ecosystem">
   <div class="wrap eco-grid">
     <div class="eco-copy">
-      <h2>Our Connected<br><em>Legal Ecosystem</em></h2>
-      <p>Six communities. One purpose.<br>A digital ecosystem that connects people, knowledge and opportunity — building a more just Pakistan.</p>
-      <blockquote>“A stronger legal ecosystem<br>for a brighter Pakistan.”</blockquote>
+      <p class="eyebrow">The ecosystem</p>
+      <h2>Our connected legal ecosystem</h2>
+      <p>Five communities, one platform. A digital ecosystem that connects clients, lawyers, firms, students and donors across Pakistan.</p>
     </div>
     <div class="eco-orbit" aria-label="Six connected legal communities">
       <div class="orbit-ring ring-outer"></div>
@@ -47,7 +45,7 @@
       <div class="orbit-ring ring-inner"></div>
       <div class="orbit-spin spin-a"><span class="orbit-ball"></span><span class="orbit-ball bottom"></span></div>
       <div class="orbit-spin spin-b"><span class="orbit-ball"></span></div>
-      <div class="orbit-center"><legal-icon name="scale"/><strong>Digital Law Firm</strong><small>Justice. Simplified.</small></div>
+      <div class="orbit-center"><legal-icon name="scale"/><strong>Digital Law Firm</strong><small>One platform</small></div>
       <div class="node-track">
         @for(node of nodes; track node.name; let i = $index){<span [class]="'connector connector-'+i"></span>}
         @for(node of nodes; track node.name; let i = $index){
@@ -56,7 +54,7 @@
       </div>
     </div>
     <div class="eco-panel">
-      <blockquote>“Connected People.<br>Greater Opportunities.<br>A More Just Pakistan.”</blockquote>
+      <h3>What that means for you</h3>
       <ul>@for(item of outcomes; track item){<li><legal-icon name="check"/>{{item}}</li>}</ul>
     </div>
   </div>
@@ -64,9 +62,9 @@
 
 <section class="roles section">
   <div class="wrap">
-    <div class="roles-head">
-      <h2>Whatever Your Role in Law, There Is a Place for You Here.</h2>
-      <blockquote>Different Journeys. A Stronger Pakistan.</blockquote>
+    <div class="section-head">
+      <div><p class="eyebrow">Get started</p><h2>Find your place</h2></div>
+      <p class="section-sub">Whatever your role in law, there is a portal for you.</p>
     </div>
     <div class="role-grid">
       @for(role of roles; track role.title){
@@ -85,18 +83,13 @@
 
 <section class="closing">
   <div class="wrap">
-    <h2 class="closing-title">One Platform. Five Portals. <em>One Connected Legal Ecosystem.</em></h2>
+    <h2 class="closing-title">Get started with Digital Law Firm</h2>
     <div class="closing-copy">
-      <p>Join thousands of people who trust Digital Law Firm. Access powerful tools, verified professionals, and real opportunities — and be part of a fairer, stronger Pakistan.</p>
+      <p>Create a free account and access verified lawyers, practical tools and a connected legal ecosystem.</p>
     </div>
     <div class="actions">
-      <a routerLink="/auth/register" class="button gold-button">Get Started with Digital Law Firm <legal-icon name="arrow"/></a>
-      <a href="#ecosystem" class="button outline-button">Explore the Ecosystem <legal-icon name="arrow"/></a>
-    </div>
-    <div class="closing-stats">
-      @for(stat of impact; track stat.label){
-        <div class="closing-stat"><legal-icon [name]="stat.icon"/><div><strong>{{stat.value}}</strong><small>{{stat.label}}</small></div></div>
-      }
+      <a routerLink="/auth/register" class="button gold-button">Create your account <legal-icon name="arrow"/></a>
+      <a routerLink="/contact" class="button outline-button">Talk to our team</a>
     </div>
   </div>
 </section>

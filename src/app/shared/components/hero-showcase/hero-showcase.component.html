@@ -25,7 +25,7 @@
       <div class="desktop-screen">
         <aside>@for(item of menu; track item){<div [class.selected]="$first"><span>◈</span>{{item}}</div>}</aside>
         <div class="dashboard">
-          <div class="welcome"><div><small>Welcome back,</small><h3>Your legal journey matters.</h3></div><span class="avatar">AH</span></div>
+          <div class="welcome"><div><small>Welcome back,</small><h3>Your matters at a glance.</h3></div><span class="avatar">AH</span></div>
           <div class="metrics">@for(metric of metrics; track metric.label){<div><legal-icon [name]="metric.icon"/><b>{{metric.value}}</b><small>{{metric.label}}</small></div>}</div>
           <div class="dashboard-panels"><div><h4>Recent activity</h4>@for(item of activity; track item){<p><span class="activity-dot"></span>{{item}}<small>View →</small></p>}</div><div><h4>Quick actions</h4>@for(action of actions; track action.label){<p><legal-icon [name]="action.icon"/>{{action.label}}</p>}</div></div>
           <div class="sample-label">ILLUSTRATIVE PORTAL PREVIEW</div>

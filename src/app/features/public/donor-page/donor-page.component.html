@@ -2,18 +2,17 @@
   <div class="hero-bg" aria-hidden="true"></div>
   <div class="wrap hero-grid">
     <div class="hero-copy">
-      <p class="eyebrow"><span></span> LEGAL AID &amp; DONORS PORTAL</p>
-      <h1>Justice Should Not Depend on Your Ability to Pay.</h1>
-      <p class="hero-sub">Give to Justice. See Your Impact.</p>
-      <p class="hero-description">Connecting people in need with legal support, and compassionate donors who make justice possible. Together, we build a fairer, stronger Pakistan.</p>
+      <p class="eyebrow">Legal Aid &amp; Donors Portal</p>
+      <h1>Justice should not depend on your ability to pay.</h1>
+      <p class="hero-description">Apply for free legal aid if you cannot afford representation — or support the Legal Aid Fund and follow exactly how your contribution is used.</p>
       <div class="actions">
-        <a routerLink="/auth/register" [queryParams]="{role:'Client'}" class="button maroon-button">Apply for Free Legal Aid <legal-icon name="arrow"/></a>
-        <a routerLink="/auth/register" [queryParams]="{role:'Donor'}" class="button gold-button">Become a Donor <legal-icon name="arrow"/></a>
+        <a routerLink="/auth/register" [queryParams]="{role:'Client'}" class="button maroon-button">Apply for free legal aid <legal-icon name="arrow"/></a>
+        <a routerLink="/auth/register" [queryParams]="{role:'Donor'}" class="button gold-button">Become a donor <legal-icon name="arrow"/></a>
       </div>
       <div class="stats-bar">
-        <div class="stat"><legal-icon name="users"/><div><strong>Real People</strong><small>Real Cases</small></div></div>
-        <div class="stat"><legal-icon name="award"/><div><strong>Transparent Use</strong><small>of Funds</small></div></div>
-        <div class="stat"><legal-icon name="scale"/><div><strong>Stronger Communities</strong><small>A Fairer Pakistan</small></div></div>
+        <div class="stat"><legal-icon name="file"/><div><strong>Free applications</strong><small>Reviewed by our team</small></div></div>
+        <div class="stat"><legal-icon name="shield"/><div><strong>Verified cases</strong><small>Eligibility checked</small></div></div>
+        <div class="stat"><legal-icon name="heart"/><div><strong>Transparent fund</strong><small>Every rupee reported</small></div></div>
       </div>
     </div>
   </div>
@@ -21,67 +20,57 @@
 
 <section class="aid-journey section">
   <div class="wrap">
-    <div class="j-head">
-      <div><h2><i>1.</i> Legal Aid Journey</h2><p>A simple, transparent process to help you get the legal support you need.</p></div>
-      <div class="j-right"><small>From Application to a Fair Outcome.</small><span>BOARD 01 / 05</span></div>
+    <div class="section-head">
+      <div><p class="eyebrow">Legal aid</p><h2>How legal aid works</h2></div>
+      <p class="section-sub">A simple, transparent process to get the legal support you need.</p>
     </div>
-    <div class="j-grid">
-      <div class="j-steps">
-        @for(j of journey; track j.title; let i = $index){
-          <div class="j-step"><span class="j-num">{{i+1}}</span><span class="j-ico"><legal-icon [name]="j.icon"/></span><strong>{{j.title}}</strong><p>{{j.text}}</p></div>
-        }
-      </div>
-      <aside class="j-side">
-        <em>"Equal Justice<br>for a Stronger<br>Pakistan."</em>
-        <p><legal-icon name="users"/> PEOPLE &nbsp; <legal-icon name="sparkle"/> OPPORTUNITY &nbsp; <legal-icon name="grid"/> TECHNOLOGY</p>
-        <small>| A MORE JUST PAKISTAN</small>
-      </aside>
+    <div class="j-steps">
+      @for(j of journey; track j.title; let i = $index){
+        <div class="j-step"><span class="j-num">{{i+1}}</span><span class="j-ico"><legal-icon [name]="j.icon"/></span><strong>{{j.title}}</strong><p>{{j.text}}</p></div>
+      }
     </div>
   </div>
 </section>
 
 <section class="aid-features section">
-  <div class="wrap feat-grid">
-    <div class="feat-main">
-      <div class="j-head"><div><h2><i>2.</i> Legal Aid Portal Features</h2><p>Everything you need, in one place.</p></div></div>
-      <div class="f-grid">
-        @for(f of features; track f.title){
-          <div class="f-card"><legal-icon [name]="f.icon"/><div><strong>{{f.title}}</strong><p>{{f.text}}</p></div></div>
-        }
-      </div>
+  <div class="wrap">
+    <div class="section-head">
+      <div><p class="eyebrow">Portal features</p><h2>Everything in one place</h2></div>
+      <p class="section-sub">For applicants and donors alike — applications, tracking and reporting.</p>
     </div>
-    <aside class="feat-side"><em>"Technology<br>Opening Doors<br>to Justice."</em></aside>
+    <div class="f-grid">
+      @for(f of features; track f.title){
+        <div class="f-card"><legal-icon [name]="f.icon"/><div><strong>{{f.title}}</strong><p>{{f.text}}</p></div></div>
+      }
+    </div>
   </div>
 </section>
 
 <section class="donor-row section">
   <div class="wrap donor-grid">
     <div class="donate-side">
-      <div class="j-head"><div><h2><i>3.</i> Become a Donor</h2><p>Your support helps real people get real legal help.</p></div></div>
+      <div class="section-head slim"><div><p class="eyebrow">Donate</p><h2>Become a donor</h2></div><p class="section-sub">Your support helps real people get real legal help.</p></div>
       <div class="donate-inner">
         <div class="donate-copy">
           <img src="assets/images/ExplorePakistan.png" alt="Giving hands">
           <div class="dc-shade"></div>
-          <div class="dc-text"><h3>Give to Justice.<br>See Your Impact.</h3><p>Your donation helps cover legal fees for those who cannot afford them — supporting individuals, families and communities across Pakistan.</p></div>
+          <div class="dc-text"><h3>Give once or monthly — see your impact.</h3><p>Your donation covers legal fees for people who cannot afford them, supporting individuals, families and communities across Pakistan.</p></div>
         </div>
         <div class="donate-form">
-          <small class="amt-label">Choose an Amount (PKR)</small>
+          <small class="amt-label">Choose an amount (PKR)</small>
           <div class="amt-grid">
             @for(a of amounts; track a.value){<button class="amt"><b>{{a.value}}</b><small>{{a.sub}}</small></button>}
           </div>
-          <a class="button navy-btn" routerLink="/auth/register" [queryParams]="{role:'Donor'}">Donate Now <legal-icon name="arrow"/></a>
-          <p class="pay-row"><legal-icon name="lock"/> Secure Payments &nbsp; <b>VISA · Mastercard · easypaisa · jazzcash</b></p>
+          <a class="button navy-btn" routerLink="/auth/register" [queryParams]="{role:'Donor'}">Donate now <legal-icon name="arrow"/></a>
+          <p class="pay-row"><legal-icon name="shield"/> Secure payments &nbsp;·&nbsp; <b>VISA · Mastercard · easypaisa · JazzCash</b></p>
         </div>
       </div>
     </div>
     <div class="trans-side">
-      <div class="j-head">
-        <div><h2><i>4.</i> Donor Transparency Dashboard</h2><p>Complete visibility. Exact numbers. Real impact.</p></div>
-        <div class="j-right"><span class="live"><i></i> LIVE</span><small>Last updated: 14 May 2024, 10:24 AM</small></div>
-      </div>
+      <div class="section-head slim"><div><p class="eyebrow">Transparency</p><h2>Donor dashboard</h2></div><p class="section-sub">Complete visibility into the fund — exact numbers, real impact.</p></div>
       <div class="t-tiles">
         @for(t of transparency; track t.label){
-          <div [class]="'t-tile '+t.cls"><legal-icon name="card"/><strong>{{t.value}}</strong><b>{{t.label}}</b><small>{{t.sub}}</small></div>
+          <div [class]="'t-tile '+t.cls"><legal-icon name="file"/><strong>{{t.value}}</strong><b>{{t.label}}</b><small>{{t.sub}}</small></div>
         }
       </div>
       <div class="t-stats">
@@ -96,7 +85,7 @@
 <section class="records section">
   <div class="wrap rec-grid">
     <div class="rec-card">
-      <div class="j-head"><div><h2><i>5.</i> Fund Activity / Ledger</h2><p>A transparent record of all fund movements.</p></div></div>
+      <div class="rec-head"><h3>Fund activity</h3><p>A transparent record of all fund movements.</p></div>
       <table>
         <thead><tr><th>Date</th><th>Description</th><th>Type</th><th>Amount (PKR)</th><th>Running Balance (PKR)</th></tr></thead>
         <tbody>
@@ -105,10 +94,10 @@
           }
         </tbody>
       </table>
-      <a class="vall" routerLink="/auth/register">View Full Fund Activity →</a>
+      <a class="vall" routerLink="/auth/register">View full fund activity →</a>
     </div>
     <div class="rec-card">
-      <div class="j-head"><div><h2><i>6.</i> Cases Supported</h2><p>Real cases. Real people. Real impact.</p></div></div>
+      <div class="rec-head"><h3>Cases supported</h3><p>Real cases funded by the Legal Aid Fund.</p></div>
       <table>
         <thead><tr><th>Case ID</th><th>Case Type</th><th>Location</th><th>Status</th><th>Legal Aid Given (PKR)</th></tr></thead>
         <tbody>
@@ -117,15 +106,15 @@
           }
         </tbody>
       </table>
-      <a class="vall" routerLink="/auth/register">View All Cases →</a>
+      <a class="vall" routerLink="/auth/register">View all cases →</a>
     </div>
     <div class="rec-card privacy">
-      <div class="j-head"><div><h2><i>7.</i> Privacy &amp; Transparency</h2><p>Transparency without compromising privacy.</p></div></div>
+      <div class="rec-head"><h3>Privacy &amp; transparency</h3><p>Full transparency — without compromising anyone's dignity.</p></div>
       <div class="pr-grid">
-        <div class="pr-col see"><b><legal-icon name="check"/> What Donors Can See</b><ul>@for(s of canSee; track s){<li><legal-icon name="check"/>{{s}}</li>}</ul></div>
-        <div class="pr-col hide"><b><legal-icon name="lock"/> What Donors Cannot See</b><ul>@for(s of cannotSee; track s){<li>✕ {{s}}</li>}</ul></div>
+        <div class="pr-col see"><b><legal-icon name="check"/> What donors can see</b><ul>@for(s of canSee; track s){<li><legal-icon name="check"/>{{s}}</li>}</ul></div>
+        <div class="pr-col hide"><b><legal-icon name="shield"/> What donors cannot see</b><ul>@for(s of cannotSee; track s){<li>✕ {{s}}</li>}</ul></div>
       </div>
-      <p class="pr-note"><legal-icon name="shield"/> We protect the dignity and privacy of every individual. Always.</p>
+      <p class="pr-note"><legal-icon name="shield"/> We protect the dignity and privacy of every individual — always.</p>
     </div>
   </div>
 </section>
@@ -133,7 +122,7 @@
 <section class="ecosystem section">
   <div class="wrap eco-grid">
     <div class="eco-left">
-      <div class="j-head"><div><h2><i>8.</i> The Ecosystem Impact</h2><p>A stronger Pakistan, powered by your impact.</p></div></div>
+      <div class="section-head slim"><div><p class="eyebrow">The bigger picture</p><h2>How your support flows through the ecosystem</h2></div></div>
       <div class="eco-steps">
         @for(e of ecosystem; track e.title){
           <div class="eco-step"><span [class]="'e-ico '+e.cls"><legal-icon [name]="e.icon"/><b>{{e.title}}</b></span><small>{{e.text}}</small></div>
@@ -141,12 +130,12 @@
       </div>
     </div>
     <div class="action-card">
-      <h3>Take Action Today</h3>
-      <p>Different roles. A common purpose — justice.</p>
+      <h3>Take action today</h3>
+      <p>Different roles, one shared goal — access to justice.</p>
       <div class="act-rows">
-        <a routerLink="/auth/register" [queryParams]="{role:'Client'}" class="act maroon"><legal-icon name="file"/><b>Apply for<br>Free Legal Aid</b><span>Start Your Application →</span></a>
-        <a routerLink="/auth/register" [queryParams]="{role:'Donor'}" class="act navy"><legal-icon name="heart"/><b>Donate<br>Now</b><span>Support Justice →</span></a>
-        <a routerLink="/donate" class="act light"><legal-icon name="grid"/><b>View Fund<br>Activity</b><span>See Full Transparency →</span></a>
+        <a routerLink="/auth/register" [queryParams]="{role:'Client'}" class="act maroon"><legal-icon name="file"/><b>Apply for<br>free legal aid</b><span>Start your application →</span></a>
+        <a routerLink="/auth/register" [queryParams]="{role:'Donor'}" class="act navy"><legal-icon name="heart"/><b>Donate<br>now</b><span>Support the fund →</span></a>
+        <a routerLink="/donate" class="act light"><legal-icon name="search"/><b>View fund<br>activity</b><span>See full transparency →</span></a>
       </div>
     </div>
   </div>

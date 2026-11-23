@@ -1,0 +1,191 @@
+@use 'variables' as *;
+
+// ============================================================
+// KAR Marketing Pages — shared design system
+// Light ivory surfaces, deep navy heroes, restrained gold.
+// ============================================================
+
+// Page wrap
+.wrap {
+  width: min(1200px, calc(100% - 48px));
+  margin: 0 auto;
+
+  @media (max-width: $breakpoint-sm) {
+    width: calc(100% - 32px);
+  }
+}
+
+// ---------------------------------------------------------
+// Section label
+// ---------------------------------------------------------
+.eyebrow {
+  font-family: $font-sans;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #a07a38;
+  margin: 0 0 14px;
+}
+
+// ---------------------------------------------------------
+// Section header block
+// ---------------------------------------------------------
+.section {
+  padding: 88px 0;
+
+  @media (max-width: $breakpoint-md) {
+    padding: 56px 0;
+  }
+}
+
+.section-head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 40px;
+  margin-bottom: 48px;
+
+  @media (max-width: $breakpoint-md) {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+    margin-bottom: 36px;
+  }
+
+  h2 {
+    font-family: $font-serif;
+    font-size: clamp(28px, 3vw, 36px);
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: -0.5px;
+    margin: 0;
+  }
+}
+
+.section-sub {
+  font-size: 15px;
+  line-height: 1.7;
+  color: #5d7385;
+  max-width: 400px;
+  margin: 0;
+}
+
+// ---------------------------------------------------------
+// Buttons (marketing)
+// ---------------------------------------------------------
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  height: 46px;
+  padding: 0 24px;
+  border-radius: 6px;
+  border: 1px solid transparent;
+  font-family: $font-sans;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+  white-space: nowrap;
+
+  legal-icon { font-size: 15px; }
+}
+
+.gold-button {
+  background: $color-gold;
+  color: #10293d;
+
+  &:hover {
+    background: $color-gold-dark;
+    color: #fff;
+  }
+}
+
+.navy-button {
+  background: #0a2f49;
+  color: #f5f2e9;
+
+  &:hover {
+    background: #123f60;
+    color: #fff;
+  }
+}
+
+.maroon-button {
+  background: #7a2e3d;
+  color: #fff;
+
+  &:hover { background: #8f3a4b; }
+}
+
+// Outline — for dark backgrounds
+.outline-button {
+  background: transparent;
+  color: #f0ece0;
+  border-color: rgba(255, 255, 255, 0.35);
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.55);
+  }
+}
+
+// Outline — for light backgrounds
+.outline-dark {
+  background: transparent;
+  color: #17334b;
+  border-color: #c3ccd2;
+
+  &:hover {
+    border-color: #17334b;
+    background: rgba(23, 51, 75, 0.04);
+  }
+}
+
+.text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #a07a38;
+
+  &:hover { color: #17334b; }
+  legal-icon { font-size: 14px; }
+}
+
+// ---------------------------------------------------------
+// Feature check list
+// ---------------------------------------------------------
+.check-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 12px;
+
+  li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    color: inherit;
+  }
+
+  legal-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    font-size: 11px;
+    color: #fff;
+    background: #2a8a6c;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+}

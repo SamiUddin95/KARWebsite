@@ -26,10 +26,10 @@ export class LawyerPageComponent {
     {title:'Video Consultation — Family Matter', sub:'Consultation', amt:'PKR 5,000'}
   ];
   heroStats = [
-    {icon:'users', value:'50,000+', label:'Clients Across Pakistan'},
-    {icon:'file', value:'10,000+', label:'Legal Tasks Posted'},
-    {icon:'briefcase', value:'PKR 25M+', label:'Earnings for Lawyers'},
-    {icon:'scale', value:'A Stronger', label:'Legal Ecosystem'}
+    {icon:'shield', value:'Bar Council', label:'Verified lawyers'},
+    {icon:'file', value:'Paid tasks', label:'Matched to your expertise'},
+    {icon:'play', value:'Consultations', label:'Secure video & chat'},
+    {icon:'briefcase', value:'Earnings', label:'Tracked in real time'}
   ];
   features = [
     {icon:'award', title:'Professional Verification', text:'Verified lawyers can access and earn top-tier opportunities.', link:'Verified & Trusted', route:'/auth/register'},
@@ -52,7 +52,7 @@ export class LawyerPageComponent {
     {name:'LAW FIRM', level:'Verified', years:'Law Firm', cls:'firm', icon:'building'},
     {name:'HONOUR', level:'Honour Member', years:'', cls:'honour', icon:'sparkle'}
   ];
-  memberChecks = ['Be Recognized','Get Opportunities','Grow Your Network','Make an Impact'];
+  memberChecks = ['Verified professional badge','Access to paid tasks','Priority client matching','Earnings & growth dashboard'];
   journey = [
     'Apply|Create your lawyer account',
     'Verification|Submit Bar Council & credentials',

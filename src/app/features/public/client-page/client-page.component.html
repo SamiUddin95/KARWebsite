@@ -2,13 +2,12 @@
   <div class="hero-bg"></div>
   <div class="wrap hero-grid">
     <div class="hero-copy">
-      <p class="eyebrow"><span></span> CLIENT PORTAL</p>
-      <h1>Get Legal Help,<br><em>Digitally.</em></h1>
-      <p class="hero-sub">From consultation to case resolution —<br>one secure client portal.</p>
-      <p class="hero-description">Access professional legal support anytime, anywhere in Pakistan. Book a consultation, upload documents, select your lawyer, pay securely, submit your case, track the matter and stay connected — all in one place.</p>
+      <p class="eyebrow">Client Portal</p>
+      <h1>Get legal help,<br>online.</h1>
+      <p class="hero-description">Book a consultation, upload documents, choose your lawyer, pay securely and track your case — all in one secure client portal, anywhere in Pakistan.</p>
       <div class="actions">
-        <a routerLink="/auth/login" class="button gold-button">Enter Client Portal <legal-icon name="arrow"/></a>
-        <a routerLink="/contact" class="button outline-button">Book a Legal Consultation</a>
+        <a routerLink="/auth/register" [queryParams]="{role:'Client'}" class="button gold-button">Create a client account <legal-icon name="arrow"/></a>
+        <a routerLink="/lawyers" class="button outline-button">Browse lawyers</a>
       </div>
       <div class="trust-bar">
         @for(t of trust; track t.title){
@@ -20,8 +19,8 @@
       <div class="laptop">
         <div class="laptop-screen">
           <div class="dash-top">
-            <span class="dt-brand"><legal-icon name="scale"/><div><b>DIGITAL LAW FIRM</b><small>Justice. Simplified.</small></div></span>
-            <span class="dt-links"><b>Home</b><b>Practice Areas</b><b>Courts</b></span>
+            <span class="dt-brand"><legal-icon name="scale"/><div><b>DIGITAL LAW FIRM</b><small>Client Portal</small></div></span>
+            <span class="dt-links"><b>Dashboard</b><b>My Cases</b><b>Documents</b></span>
             <span class="dt-user"><i class="bell">◔</i><img src="assets/images/man.png" alt="Client"><div><b>Asad Khan</b><small>Client</small></div></span>
           </div>
           <div class="dash-body">
@@ -38,7 +37,7 @@
               <span><legal-icon name="shield"/>Settings</span>
             </aside>
             <div class="dash-main">
-              <div class="dash-head"><div><strong>Welcome back,</strong><span>Your Legal Journey Matters.</span></div></div>
+              <div class="dash-head"><div><strong>Welcome back,</strong><span>Asad Khan</span></div></div>
               <p class="dash-note">Track your cases, connect with lawyers, and get updates — all in one secure place.</p>
               <div class="dash-stats">
                 <div class="dash-tile"><span class="tile-ico teal"><legal-icon name="file"/></span><strong>2</strong><small>Active Cases</small><a>View Details →</a></div>
@@ -63,22 +62,21 @@
         <div class="phone-notch"></div>
         <div class="phone-screen">
           <div class="phone-top">
-            <span class="phone-logo"><legal-icon name="scale"/><div><b>DIGITAL LAW FIRM</b><small>Justice. Simplified.</small></div></span>
-            <strong>Get Legal Help,<br>On the Go.</strong>
+            <span class="phone-logo"><legal-icon name="scale"/><div><b>DIGITAL LAW FIRM</b><small>Client Portal</small></div></span>
+            <strong>Your matter,<br>on the go.</strong>
           </div>
           <ul>@for(m of phoneMenu; track m; let i = $index){<li><i [class]="'ic-'+i"><legal-icon [name]="phoneIcons[i]"/></i>{{m}}</li>}</ul>
         </div>
       </div>
-      <p class="hero-quote">"Technology<br>for a more just<br>Pakistan."</p>
     </div>
   </div>
 </section>
 
 <section class="features section">
   <div class="wrap">
-    <div class="features-head">
-      <h2>Key Features for Our Clients</h2>
-      <p>Everything you need for your legal matters — in one secure portal.</p>
+    <div class="section-head">
+      <div><p class="eyebrow">Client portal</p><h2>Everything in one place</h2></div>
+      <p class="section-sub">Ten tools that cover your entire legal matter — from the first consultation to the final order.</p>
     </div>
     <div class="feature-row">
       @for(f of features; track f.title){
@@ -90,14 +88,14 @@
 
 <section class="journey section">
   <div class="wrap">
-    <div class="journey-head">
-      <h2>Your Journey to Justice</h2>
-      <p>A simple, secure and transparent process — designed for you.</p>
+    <div class="section-head">
+      <div><p class="eyebrow">How it works</p><h2>Nine steps, start to finish</h2></div>
+      <p class="section-sub">A simple, transparent process designed so you always know what happens next.</p>
     </div>
     <div class="steps">
       <div class="step">
         <span class="step-num">1</span>
-        <strong>Book Consultation</strong>
+        <strong>Book a consultation</strong>
         <p>Consult with verified lawyers online.</p>
         <div class="mock">
           <div class="mock-head"><img src="assets/images/man.png" alt="Lawyer"><div><b>Book a Consultation</b><small>Select a practice area, choose a lawyer.</small></div></div>
@@ -106,13 +104,13 @@
       </div>
       <div class="step">
         <span class="step-num">2</span>
-        <strong>Upload Your Matter</strong>
+        <strong>Upload your matter</strong>
         <p>Upload documents, audio or chat details.</p>
         <div class="mock dropzone"><span class="dz-ico">⭱</span><b>Drag &amp; drop files here</b><small>or click to upload</small></div>
       </div>
       <div class="step">
         <span class="step-num">3</span>
-        <strong>Choose Date &amp; Time</strong>
+        <strong>Choose date &amp; time</strong>
         <p>Pick a convenient date and time.</p>
         <div class="mock">
           <b class="mock-title">Select Date &amp; Time <small>March 2025</small></b>
@@ -122,8 +120,8 @@
       </div>
       <div class="step">
         <span class="step-num">4</span>
-        <strong>Secure Payment</strong>
-        <p>Pay securely (PKR).</p>
+        <strong>Secure payment</strong>
+        <p>Pay securely in PKR.</p>
         <div class="mock">
           <b class="mock-title">Consultation Fee <em>PKR 5,000</em></b>
           <span class="pay-row"><i>▣</i>Debit/Credit Card</span>
@@ -134,7 +132,7 @@
       </div>
       <div class="step">
         <span class="step-num">5</span>
-        <strong>Video Consultation</strong>
+        <strong>Video consultation</strong>
         <p>Meet your lawyer online.</p>
         <div class="mock video-mock">
           <img src="assets/images/man.png" alt="Lawyer on video call">
@@ -144,7 +142,7 @@
       </div>
       <div class="step">
         <span class="step-num">6</span>
-        <strong>Legal Opinion</strong>
+        <strong>Legal opinion</strong>
         <p>Receive a written legal opinion.</p>
         <div class="mock">
           <div class="mock-head"><span class="file-ico">🗎</span><div><b>Legal Opinion</b><small>Docx · 2.1 MB</small></div></div>
@@ -153,7 +151,7 @@
       </div>
       <div class="step">
         <span class="step-num">7</span>
-        <strong>Submit Case</strong>
+        <strong>Submit case</strong>
         <p>File your case with complete details.</p>
         <div class="mock center">
           <span class="big-check"><legal-icon name="check"/></span>
@@ -164,8 +162,8 @@
       </div>
       <div class="step">
         <span class="step-num">8</span>
-        <strong>Track Your Case</strong>
-        <p>Track progress in real-time.</p>
+        <strong>Track your case</strong>
+        <p>Track progress in real time.</p>
         <div class="mock">
           <span class="tl-row"><i class="done"></i><div><b>Case Filed</b><small>10 Mar 2025</small></div></span>
           <span class="tl-row"><i class="done"></i><div><b>Notice Issued</b><small>12 Mar 2025</small></div></span>
@@ -175,14 +173,13 @@
       </div>
       <div class="step">
         <span class="step-num">9</span>
-        <strong>Stay Connected</strong>
+        <strong>Stay connected</strong>
         <p>Chat with your appointed lawyers.</p>
         <div class="mock center">
           <span class="scales-ico"><legal-icon name="scale"/></span>
           <b>Your Lawyer</b>
           <small>We'll prepare your documents and update you soon.</small>
-          <em class="mock-quote">"Your Case.<br>Our Commitment."</em>
-          <a class="mock-btn">Thank you!</a>
+          <a class="mock-btn">Open Chat</a>
         </div>
       </div>
     </div>
@@ -192,10 +189,10 @@
 <section class="client-workspace section" aria-label="Video consultation and case management">
   <div class="workspace-wrap">
     <div class="consultation-panel">
-      <header class="workspace-heading"><h2>Secure Video Consultation</h2><p>Real conversations. Real solutions.</p></header>
+      <header class="workspace-heading"><h2>Secure video consultations</h2><p>Meet your lawyer face to face — without leaving home.</p></header>
       <div class="consultation-body">
         <div class="consultation-copy">
-          <p>Connect with verified legal professionals through high-quality, secure video consultations. Discuss your matter, share documents and get expert advice — from the comfort of your home or office.</p>
+          <p>Connect with verified legal professionals through high-quality, encrypted video consultations. Discuss your matter, share documents and get expert advice from anywhere in Pakistan.</p>
           <ul class="check-list">@for(c of videoChecks; track c.text){<li><span><legal-icon [name]="c.icon"/></span>{{c.text}}</li>}</ul>
         </div>
         <div class="consultation-console" role="img" aria-label="Illustrative video consultation with a lawyer and an integrated chat panel">
@@ -217,7 +214,7 @@
       </div>
     </div>
     <div class="management-panel">
-      <header class="workspace-heading"><h2>Digital Case Management</h2><p>Complete visibility. Greater control.</p></header>
+      <header class="workspace-heading"><h2>Digital case management</h2><p>Follow every filing, hearing and update.</p></header>
       <div class="matter-preview" aria-label="Illustrative case management dashboard">
         <div class="matter-top">
           <div class="matter-title"><div><h3>Case # DL-2025-0321</h3><strong>State vs. Muhammad Ali Khan</strong><small>Bail Application</small></div><span class="matter-status">Active</span></div>
@@ -237,13 +234,13 @@
     </div>
   </div>
 </section>
-<div class="duo-sections">
+
 <section class="docs-sec section">
   <div class="wrap docs-grid">
     <div class="docs-copy">
-      <h2>Documents &amp; Communication</h2>
-      <p class="lead">Your digital locker, safe and simple.</p>
-      <p>Upload, manage and share your documents securely. Communicate with your legal team through encrypted messaging with role-based access so your sensitive information stays confidential.</p>
+      <p class="eyebrow">Documents &amp; messaging</p>
+      <h2>Your documents, organized and secure</h2>
+      <p>Upload, manage and share documents in your secure digital locker, and message your legal team with role-based access so sensitive information stays confidential.</p>
       <ul class="doc-feats">
         @for(d of docFeats; track d.text){<li><span><legal-icon [name]="d.icon"/></span>{{d.text}}</li>}
       </ul>
@@ -257,31 +254,15 @@
   </div>
 </section>
 
-<section class="support section">
-  <div class="wrap support-grid">
-    <div class="support-copy">
-      <h2>Trusted Legal Support<br>Across Pakistan</h2>
-      <p>Access experienced lawyers, transparent processes and secure technology — built for a stronger, more just Pakistan.</p>
-      <div class="support-icons">
-        @for(s of supportItems; track s.text){<span><legal-icon [name]="s.icon"/>{{s.text}}</span>}
-      </div>
-    </div>
-    <div class="support-media">
-      <blockquote>"Justice<br>within reach<br>for every<br>Pakistani."</blockquote>
-    </div>
-  </div>
-</section>
-</div>
-
 <section class="cta">
   <div class="wrap cta-grid">
     <div class="cta-copy">
-      <h3>Ready to take the next step?</h3>
-      <p>Join thousands of clients who trust Digital Law Firm for their legal needs.</p>
+      <h3>Create your client account</h3>
+      <p>Book your first consultation in minutes — verified lawyers, transparent fees, one secure portal.</p>
     </div>
     <div class="cta-actions">
-      <a routerLink="/auth/login" class="button gold-button">Enter Client Portal <legal-icon name="arrow"/></a>
-      <a routerLink="/contact" class="button outline-button">Book a Legal Consultation <legal-icon name="arrow"/></a>
+      <a routerLink="/auth/register" [queryParams]="{role:'Client'}" class="button gold-button">Get started <legal-icon name="arrow"/></a>
+      <a routerLink="/lawyers" class="button outline-button">Browse lawyers</a>
     </div>
     <div class="cta-badges">
       @for(b of ctaBadges; track b.title){
@@ -290,6 +271,3 @@
     </div>
   </div>
 </section>
-
-
-

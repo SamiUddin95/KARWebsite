@@ -48,10 +48,10 @@ export class StudentPageComponent {
   ];
   why = [
     {icon:'book', tag:'LEARN', title:'Learn', text:'Comprehensive courses on Pakistani law, taught by expert lawyers.', caption:'From theory to deep understanding.', img:'assets/images/study.png'},
-    {icon:'scale', tag:'PRACTICE', title:'Practice', text:'Case studies, drafting exercises and legal simulations.', caption:'Sharpen your practical skills.', img:'assets/images/legalhelp.jpg'},
+    {icon:'scale', tag:'PRACTICE', title:'Practice', text:'Case studies, drafting exercises and legal simulations.', caption:'Sharpen your practical skills.', img:'assets/images/legalhelp.png'},
     {icon:'award', tag:'CERTIFY', title:'Certify', text:'Earn verifiable certificates to showcase your skills.', caption:'Stand out with real credentials.', img:'assets/images/Reaches.jpg'},
     {icon:'briefcase', tag:'INTERN', title:'Intern', text:'Access verified internship opportunities with law firms & organizations.', caption:'Bridge learning with real practice.', img:'assets/images/man.png'},
-    {icon:'sparkle', tag:'AI ASSISTANT', title:'AI Assistant', text:'Your 24/7 legal learning and research assistant.', caption:'All that understands Pakistan law.', img:'assets/images/girl.png'},
+    {icon:'sparkle', tag:'AI ASSISTANT', title:'AI Assistant', text:'Your 24/7 legal learning and research assistant.', caption:'All that understands Pakistan law.', img:'assets/images/girl.webp'},
     {icon:'card', tag:'EARN', title:'Earn', text:'Earn through our referral program and special projects.', caption:'Learn, contribute, and earn.', img:'assets/images/karachi-legal.jpg'}
   ];
   startChecks = ['Easy Registration','Access to Free Resources','Verified Certificates','Internship Opportunities'];
@@ -63,7 +63,7 @@ export class StudentPageComponent {
   ];
   programs = [
     {img:'assets/images/SupremeCourt.png', title:'Constitutional Law of Pakistan', lessons:'12 Lessons', price:'PKR 5,000'},
-    {img:'assets/images/legalhelp.jpg', title:'Civil Procedure (Code, 1908)', lessons:'10 Lessons', price:'PKR 4,000'},
+    {img:'assets/images/legalhelp.png', title:'Civil Procedure (Code, 1908)', lessons:'10 Lessons', price:'PKR 4,000'},
     {img:'assets/images/karachi-legal.jpg', title:'Legal Drafting & Documentation', lessons:'8 Lessons', price:'PKR 4,000'},
     {img:'assets/images/Reaches.jpg', title:'Corporate & Commercial Law', lessons:'14 Lessons', price:'PKR 6,000'}
   ];
@@ -83,7 +83,7 @@ export class StudentPageComponent {
     {value:'PKR 1,000', label:'Per Successful Signup'}
   ];
   bottomCards = [
-    {icon:'scale', label:'Specialization Preparation Track', title:'Student Case Experience', text:'Study real cases with expert supervision.', checks:['Case briefs & analyses','Peer discussions','Mentor feedback sessions'], cta:'Refer & Earn Now', img:'assets/images/girl.png'},
+    {icon:'scale', label:'Specialization Preparation Track', title:'Student Case Experience', text:'Study real cases with expert supervision.', checks:['Case briefs & analyses','Peer discussions','Mentor feedback sessions'], cta:'Refer & Earn Now', img:'assets/images/girl.webp'},
     {icon:'file', label:'', title:'Career Profile & CV Builder', text:'Turn learning into career-ready profile.', checks:['Create your legal CV','Portfolio of certificates & skills','Get matched to top law firms'], cta:'Create My Profile', img:'assets/images/man.png'},
     {icon:'users', label:'', title:'Community, Events & Opportunities', text:'Grow your network. Learn. Lead.', checks:['Live webinars with judges & senior lawyers','Moots, discussions & peer support','Scholarships & opportunities'], cta:'Explore Events & Community', img:'assets/images/karachi-legal.jpg'}
   ];

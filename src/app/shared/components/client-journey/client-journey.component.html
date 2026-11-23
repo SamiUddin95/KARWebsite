@@ -1,17 +1,16 @@
 <div class="client-panels">
   <a class="portrait-panel" routerLink="/lawyers" aria-label="Find a lawyer for your legal consultation">
-    <img src="assets/images/legalhelp.jpg" alt="A woman consulting a lawyer by video call on her tablet" loading="lazy" width="1024" height="1536">
+    <img src="assets/images/legalhelp.png" alt="A woman consulting a lawyer by video call on her tablet" loading="lazy" width="1024" height="1536">
     <div class="portrait-shade"></div>
     <div class="portrait-copy">
-      <h3>Seeking<br>Legal Help?</h3>
-      <p class="reassurance">You’re not alone.</p>
-      <p class="portrait-description">Trusted advice.<br>Real legal solutions.<br>Connect with lawyers<br>across Pakistan.</p>
+      <h3>Find the right<br>lawyer for you.</h3>
+      <p class="portrait-description">Browse verified advocates across Pakistan, compare expertise and book a consultation online.</p>
     </div>
-    <div class="portrait-caption">Informed citizens.<br>A stronger Pakistan.<span>Find your lawyer <legal-icon name="arrow"/></span></div>
+    <div class="portrait-caption"><span>Find your lawyer <legal-icon name="arrow"/></span></div>
   </a>
 
   <div class="journey-panel">
-    <div class="journey-heading"><h3>CLIENT JOURNEY</h3><p>From your first question to your case file — digitally connected.</p></div>
+    <div class="journey-heading"><h3>HOW IT WORKS</h3><p>Nine steps from your first question to a resolved matter.</p></div>
     <div class="journey-scroll" tabindex="0" role="region" aria-label="Explore nine steps in your legal journey">
       <div class="journey-phones">
         @for(step of steps; track step.title) {
@@ -50,16 +49,15 @@
         }
       </div>
     </div>
-    <p class="journey-caption">“Legal services designed around you.”</p>
-    <p class="preview-note">Illustrative screens · Explore a step to get started</p>
+    <p class="preview-note">Illustrative screens · Select any step to get started</p>
   </div>
 
   <div class="reach-panel">
     <img class="waterfront" src="assets/images/Reaches.jpg" alt="An illuminated waterfront promenade and city skyline at dusk" loading="lazy" width="1024" height="1536">
     <div class="reach-shade"></div>
     <div class="reach-content">
-      <h3>Always within reach.</h3>
-      <p class="reach-subtitle">Consult. Document. Track. Resolve.</p>
+      <h3>Your matter, wherever you are.</h3>
+      <p class="reach-subtitle">Consult, share, track and resolve — on web or mobile.</p>
       <div class="reach-features">@for(feature of features; track feature.title){<a [routerLink]="feature.route"><span><legal-icon [name]="feature.icon"/></span><div><h4>{{feature.title}}</h4><p>{{feature.text}}</p></div></a>}</div>
       <a routerLink="/lawyers" class="consultation-button">Book a consultation <legal-icon name="arrow"/></a>
     </div>

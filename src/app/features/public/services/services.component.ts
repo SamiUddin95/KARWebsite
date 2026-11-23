@@ -26,7 +26,7 @@ export class ServicesComponent {
     {icon:'heart', name:'Legal Aid & Donors', text:'Support Justice & Inclusion', color:'#8a2f43', route:'/donate'}
   ];
   portals = [
-    {tag:'CLIENT', tagline:'Legal Help', img:'assets/images/legalhelp.jpg', cls:'navy', route:'/clients', cta:'Enter Portal',
+    {tag:'CLIENT', tagline:'Legal Help', img:'assets/images/legalhelp.png', cls:'navy', route:'/clients', cta:'Enter Portal',
       items:['Consult Lawyers','View Services','Get Legal Opinion','Submit & Track Cases','Secure Payments']},
     {tag:'LAWYER', tagline:'Work. Earn. Grow.', img:'assets/images/man.png', cls:'gold', route:'/for-lawyers', cta:'Join as Lawyer',
       items:['Verified Profile','Task Opportunities','Case Assignment','Video Consultations','Drafting & Research','Earnings Dashboard']},

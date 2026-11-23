@@ -9,8 +9,7 @@
 .portrait-shade { position: absolute; inset: 0; background: linear-gradient(90deg,#041d35d9,transparent 77%),linear-gradient(0deg,#031c32eb,transparent 36%); }
 .portrait-copy { position: relative; padding: 24px 20px; text-shadow: 0 2px 6px #00172580; }
 h3 { font: 500 29px/1.06 'Playfair Display',Georgia,serif; color: inherit; margin: 0; }
-.reassurance { font: 17px/1.3 Georgia,serif; margin: 12px 0; }
-.portrait-description { font-size: 11px; line-height: 1.65; color: #e2e9eb; max-width: 140px; }
+.portrait-description { font-size: 12px; line-height: 1.7; color: #e2e9eb; max-width: 210px; margin-top: 14px; }
 .portrait-caption { position: absolute; bottom: 20px; left: 20px; right: 15px; font: 19px/1.12 Georgia,serif; text-shadow: 0 2px 5px #001522; }
 .portrait-caption span { display: flex; align-items: center; gap: 9px; color: #efd496; font: 10px Arial,sans-serif; margin-top: 13px; }
 .portrait-caption legal-icon { font-size: 11px; }

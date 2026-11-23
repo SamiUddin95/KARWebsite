@@ -1,36 +1,19 @@
 :host{display:block;background:#f7f7f2;color:#17334b;--navy:#06253b;--gold:#d5b371}
 *{box-sizing:border-box}
-.wrap{width:min(1320px,calc(100% - 88px));margin:auto}
-.section{padding:38px 0}
-h1,h2,h3{font-family:'Playfair Display',Georgia,serif;font-weight:500;color:inherit;margin:0}
+h1,h2,h3{font-family:'Playfair Display',Georgia,serif;font-weight:600;color:inherit;margin:0}
 em{font-style:normal}
 p{line-height:1.7;margin:0}
-blockquote{margin:0;font:italic 15px/1.5 Georgia,serif;color:#a58043;text-align:right}
-.button{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:12px 20px;border:1px solid transparent;border-radius:4px;font-size:11px;font-weight:650;text-decoration:none;transition:transform .2s,box-shadow .2s;cursor:pointer}
-.button:hover{transform:translateY(-2px);box-shadow:0 6px 18px #0003}
-.gold-button{background:linear-gradient(110deg,#f0d59a,#d3ab5e);color:#102c42;border-color:#e7c783}
-.navy-button{background:#0c2c47;color:#f5f2e9;border-color:#0c2c47}
-.maroon-button{background:#8a2f43;color:#f5f2e9;border-color:#8a2f43}
-.outline-button{color:#f0e6d2;border-color:#a8a088;background:#092b4366}
-.actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:24px}
-.sec-head{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin-bottom:24px}
-.sec-head i{font:italic 15px Georgia,serif;color:#a58043}
-.sec-head h2{font-size:clamp(24px,2.6vw,34px);letter-spacing:-.5px;color:#06253b}
-.sec-sub{margin-left:auto;font:italic 14px Georgia,serif;color:#a58043}
+.actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:26px}
 .row-end{display:flex;align-items:center;gap:26px;margin-top:26px}
-.row-end blockquote{margin-left:auto}
 .row-end.col-start{flex-direction:column;align-items:flex-start;gap:10px}
-.row-end.col-start .left-quote{margin-left:0;text-align:left}
 
 /* Hero */
-.svc-hero{position:relative;background:#041e32;color:#f5f2e9;overflow:hidden;padding:44px 0 24px}
+.svc-hero{position:relative;background:#041e32;color:#f5f2e9;overflow:hidden;padding:52px 0 28px}
 .hero-bg{position:absolute;inset:0;background:linear-gradient(90deg,#041e32 10%,#041e32e8 38%,#041e3288 62%,#041e3212 95%),linear-gradient(0deg,#041e3299,#041e3200 45%),url('/assets/images/SupremeCourt.png') center/100% 100% no-repeat}
 .hero-grid{position:relative;display:grid;grid-template-columns:.95fr 1.05fr;gap:40px;align-items:center}
-.hero-copy h1{font-size:clamp(42px,4.6vw,62px);letter-spacing:-1.8px;line-height:1.05}
-.hero-sub{font:italic 20px/1.5 Georgia,serif;color:#e8d9b6;margin-top:16px}
-.hero-description{font-size:13px;color:#c3cfd6;max-width:480px;margin-top:14px}
-.story-link{display:inline-flex;align-items:center;gap:8px;margin-top:20px;font-size:11px;font-weight:600;color:#d5bb87;text-decoration:none}
-.story-link legal-icon{font-size:13px}
+.hero-copy .eyebrow{color:#d5bb87}
+.hero-copy h1{font-size:clamp(36px,3.8vw,52px);letter-spacing:-1.5px;line-height:1.1;color:#fdfaf2}
+.hero-description{font-size:15px;line-height:1.75;color:#c3cfd6;max-width:500px;margin-top:18px}
 .stats-bar{position:relative;display:flex;gap:34px;flex-wrap:wrap;margin-top:28px;padding-top:16px;border-top:1px solid #d5b37133}
 .stat{display:flex;align-items:center;gap:10px}
 .stat legal-icon{font-size:20px;color:#e4c589}
@@ -130,7 +113,7 @@ blockquote{margin:0;font:italic 15px/1.5 Georgia,serif;color:#a58043;text-align:
 .duo2-grid{display:grid;grid-template-columns:1fr 1.15fr;gap:40px;align-items:stretch}
 .portals-panel{display:flex;flex-direction:column}
 .portals-panel .portal-grid{flex:1;align-items:stretch}
-.duo2-grid .sec-head{margin-bottom:22px;flex-direction:column;align-items:flex-start;gap:4px}
+.duo2-grid .section-head{margin-bottom:22px;flex-direction:column;align-items:flex-start;gap:4px}
 .duo2-grid .sec-sub{margin-left:0}
 /* Portals */
 .portal-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
@@ -143,7 +126,8 @@ blockquote{margin:0;font:italic 15px/1.5 Georgia,serif;color:#a58043;text-align:
 .portal-body ul{list-style:none;margin:0 0 8px;padding:0;flex:1}
 .portal-body li{display:flex;align-items:center;gap:5px;font-size:9.5px;color:#43546a;padding:1.5px 0}
 .portal-body li legal-icon{font-size:9px;color:#1d6a44}
-.portal-btn{align-self:stretch;justify-content:center;padding:6px 8px;font-size:8.5px}
+.portal-btn{align-self:stretch;justify-content:center;height:auto;padding:9px 8px;font-size:8.5px;gap:5px;line-height:1.3;text-align:center;white-space:normal}
+.portal-btn legal-icon{font-size:10px}
 .portal-card.navy .portal-tag{color:#0c2c47}
 .portal-card.navy .portal-btn{background:#0c2c47;color:#f5f2e9}
 .portal-card.gold .portal-tag{color:#a58043}
@@ -157,7 +141,7 @@ blockquote{margin:0;font:italic 15px/1.5 Georgia,serif;color:#a58043;text-align:
 
 /* Lawyer + Membership duo */
 .duo3-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:44px;align-items:stretch}
-.duo3-grid .sec-head{margin-bottom:22px;flex-direction:column;align-items:flex-start;gap:4px}
+.duo3-grid .section-head{margin-bottom:22px;flex-direction:column;align-items:flex-start;gap:4px}
 .duo3-grid .sec-sub{margin-left:0}
 .lawyer-panel,.member-panel{display:flex;flex-direction:column}
 .lawyer-panel .row-end,.member-panel .row-end{margin-top:auto;padding-top:18px}
@@ -168,10 +152,11 @@ blockquote{margin:0;font:italic 15px/1.5 Georgia,serif;color:#a58043;text-align:
 .lawyer-photo img{width:100%;max-height:300px;object-fit:cover;object-position:top;border-radius:10px}
 .student-photo{position:relative;border-radius:10px;overflow:hidden;min-height:340px}
 .student-photo img{width:100%;height:100%;min-height:340px;object-fit:cover;object-position:top}
-.photo-quote{position:absolute;left:0;right:0;bottom:0;background:linear-gradient(#0c2c4700,#0c2c47e8 40%);padding:60px 18px 18px;color:#f5f2e9}
+.photo-quote{position:absolute;left:0;right:0;bottom:0;background:linear-gradient(#0c2c4700,#0c2c47e8 40%);padding:60px 18px 18px;color:#f5f2e9;display:flex;justify-content:center}
 .photo-quote em{display:block;font:italic 13px/1.5 Georgia,serif;color:#e8d9b6;margin-bottom:12px}
+.photo-quote .button{width:100%;height:auto;padding:12px 14px;font-size:12px;line-height:1.3;white-space:normal;text-align:center}
 .feat-list{list-style:none;margin:0;padding:0;display:grid;gap:6px}
-.feat-list li{display:flex;align-items:center;gap:8px;background:#fff;border:1px solid #e6e2d6;border-radius:7px;padding:8px 10px;font-size:11px;font-weight:600;color:#17334b}
+.feat-list li{display:flex;align-items:center;gap:8px;background:#fff;border:1px solid #e6e2d6;border-radius:7px;padding:10px 12px;font-size:12px;font-weight:600;color:#17334b}
 .feat-list legal-icon{font-size:13px;color:#a58043}
 .lawyer-phone{display:flex;justify-content:center}
 
@@ -192,7 +177,7 @@ blockquote{margin:0;font:italic 15px/1.5 Georgia,serif;color:#a58043;text-align:
 
 /* Student + Legal aid duo */
 .duo4-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:44px;align-items:stretch}
-.duo4-grid .sec-head{margin-bottom:22px;flex-direction:column;align-items:flex-start;gap:4px}
+.duo4-grid .section-head{margin-bottom:22px;flex-direction:column;align-items:flex-start;gap:4px}
 .duo4-grid .sec-sub{margin-left:0}
 .aid-panel{display:flex;flex-direction:column}
 .aid-panel .aid-grid{flex:1}
@@ -217,8 +202,8 @@ blockquote{margin:0;font:italic 15px/1.5 Georgia,serif;color:#a58043;text-align:
 
 /* AI + Roles duo */
 .duo-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:44px;align-items:start}
-.duo-grid .sec-head{margin-bottom:22px}
-.duo-grid .sec-head h2{font-size:clamp(20px,2vw,26px)}
+.duo-grid .section-head{margin-bottom:22px}
+.duo-grid .section-head h2{font-size:clamp(20px,2vw,26px)}
 .ai-grid{display:grid;grid-template-columns:1.05fr 1fr 1fr 1fr;gap:14px;align-items:stretch}
 .ai-intro h3{font-size:clamp(20px,1.9vw,26px);line-height:1.2;color:#06253b;margin-bottom:10px}
 .ai-intro p{font-size:12px;color:#43546a;margin-bottom:16px}
